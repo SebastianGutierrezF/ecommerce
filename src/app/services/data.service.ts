@@ -6,12 +6,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DataService {
   baseUrl = 'https://enefty-webservice.herokuapp.com/controller/';
-  public httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json; charset=utf-8',
-      'Access-Control-Allow-Origin': '*'
-    })
-  };
 
   constructor(private http: HttpClient) { }
 
