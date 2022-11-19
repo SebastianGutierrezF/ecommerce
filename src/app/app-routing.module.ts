@@ -11,15 +11,16 @@ import { RegistroComponent } from './registro/registro.component';
 import { VentasComponent } from './ventas/ventas.component';
 
 const routes: Routes = [
-  {path: '', component: DashboardComponent},
   {path: 'login', component: LoginComponent},
   {path: 'registro', component: RegistroComponent},
-  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: 'carrito', component: CarritoComponent, canActivate: [AuthGuard]},
-  {path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard]},
+  {path: '', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'ventas', component: VentasComponent, canActivate: [AuthGuard]},
+  {path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard]},
+  {path: 'carrito', component: CarritoComponent, canActivate: [AuthGuard]},
   {path: 'agregar-nft', component: AddNFTComponent, canActivate: [AuthGuard]},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'agregar-oferta', component: AddOfertaComponent, canActivate: [AuthGuard]},
+  {path: '**', redirectTo: 'dashboard'}
 ];
 
 @NgModule({
