@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard]},
   {path: 'carrito', component: CarritoComponent, canActivate: [AuthGuard]},
   {path: 'agregar-nft', component: AddNFTComponent, canActivate: [AuthGuard]},
-  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  {path: 'dashboard', component: DashboardComponent},
   {path: 'agregar-oferta', component: AddOfertaComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: 'dashboard'}
 ];
