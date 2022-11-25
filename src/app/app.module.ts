@@ -12,6 +12,10 @@ import { VentasComponent } from './ventas/ventas.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Admin } from './admin/admin.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatTableModule } from '@angular/material/table';
+
+
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { Admin } from './admin/admin.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSliderModule,
+    MatTableModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
