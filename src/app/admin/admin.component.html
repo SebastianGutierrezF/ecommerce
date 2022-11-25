@@ -1,0 +1,56 @@
+<div class="uploaders">
+    <div class="uploader">
+        <h1>Subir NFT</h1>
+        <hr>
+        <form [formGroup]="nftForm">
+            <label class="dropZone" for="upNFT">Sube el NFT
+                <span class="material-symbols-outlined">
+                    upload
+                    </span></label>
+            <br>
+            <input type="file" id="upNFT" class="fileInput" (change)="subirImagen($event, 'nft')">
+            <input type="text" class="control" formControlName="nombre_a" placeholder="Nombre">
+            <input type="number" class="control" formControlName="precio_a" placeholder="$ Precio">
+            <label for="cat" style="margin-top: 25px;">Categoría</label>
+            <select class="control" name="categorias" id="cat" formControlName="idcat_a">
+                <option disabled selected>Categoria</option>
+                <option *ngFor="let cat of categorias" [value]="cat.id_c">{{cat.nombre_c}}</option>
+            </select>
+            <button type="button" [disabled]="nftForm.invalid" (click)="insertarProducto()">Guardar</button>
+        </form>
+    </div>
+    
+    <div class="uploader">
+        <h1>Subir oferta</h1>
+        <hr>
+        <form [formGroup]="ofertaForm">
+            <label for="upOf" class="dropZone">Sube el banner de la oferta
+                <span class="material-symbols-outlined">
+                upload
+                </span></label>
+            <br>
+            <input class="fileInput" type="file" id="upOf" (change)="subirImagen($event, 'oferta')">
+            <input type="number" class="control" formControlName="desc_o" placeholder="% descuento">
+            <label><small>Fecha de inicio</small></label>
+            <input type="date" class="control" formControlName="fechain_o" placeholder="Fecha de inicio">
+            <label><small>Fecha de termino</small></label>
+            <input type="date" class="control" formControlName="fechafin_o" placeholder="Fecha de fin">
+            <button type="button" [disabled]="ofertaForm.invalid" (click)="insertarOferta()">Guardar</button>
+        </form>
+    </div>
+    
+    <div class="uploader">
+        <h1>Agregar categoria</h1>
+        <hr>
+        <form [formGroup]="catForm">
+            <label for="upCat" class="dropZone">Sube el banner de la categoría<span class="material-symbols-outlined">
+                upload
+                </span></label>
+            <br>
+            <input class="fileInput" type="file" id="upCat" (change)="subirImagen($event, 'cat')">
+            <input class="control" formControlName="nombre_c" placeholder="Nombre">
+            <textarea class="control" formControlName="com_c" placeholder="Comentario"></textarea>
+            <button type="button" [disabled]="catForm.invalid" (click)="agregarCategoria()">Guardar</button>
+        </form>
+    </div>
+</div>
