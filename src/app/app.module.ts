@@ -5,16 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CarritoComponent } from './carrito/carrito.component';
-import { PerfilComponent, PerfilComponent } from './perfil/perfil.component';
-import { LoginComponent, LoginComponent } from './login/login.component';
-import { RegistroComponent, RegistroComponent } from './registro/registro.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 import { VentasComponent } from './ventas/ventas.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Admin } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTableModule } from '@angular/material/table';
-
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { BuscadorComponent } from './buscador/buscador.component';
@@ -27,7 +26,10 @@ import { BuscadorComponent } from './buscador/buscador.component';
     PerfilComponent,
     LoginComponent,
     RegistroComponent,
-    VentasComponent
+    VentasComponent,
+    Admin,
+    NavbarComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,
