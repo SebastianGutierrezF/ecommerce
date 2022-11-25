@@ -7,10 +7,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { LoginComponent } from './login/login.component';
-import { AddOfertaComponent } from './add-oferta/add-oferta.component';
 import { RegistroComponent } from './registro/registro.component';
-import { AddNFTComponent } from './add-nft/add-nft.component';
 import { VentasComponent } from './ventas/ventas.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { Admin } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +20,15 @@ import { VentasComponent } from './ventas/ventas.component';
     CarritoComponent,
     PerfilComponent,
     LoginComponent,
-    AddOfertaComponent,
     RegistroComponent,
-    AddNFTComponent,
+    Admin,
     VentasComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

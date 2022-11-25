@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddNFTComponent } from './add-nft/add-nft.component';
-import { AddOfertaComponent } from './add-oferta/add-oferta.component';
+import { Admin } from './admin/admin.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -17,9 +16,8 @@ const routes: Routes = [
   {path: 'ventas', component: VentasComponent, canActivate: [AuthGuard]},
   {path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard]},
   {path: 'carrito', component: CarritoComponent, canActivate: [AuthGuard]},
-  {path: 'agregar-nft', component: AddNFTComponent, canActivate: [AuthGuard]},
+  {path: 'admin', component: Admin, canActivate: [AuthGuard]},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: 'agregar-oferta', component: AddOfertaComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: 'dashboard'}
 ];
 

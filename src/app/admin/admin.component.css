@@ -1,0 +1,113 @@
+* {
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+} 
+
+h1 {
+    color: white;
+    font-size: large;
+}
+
+label {
+    color: white;
+    margin: 0px;
+    padding: 0px;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.uploaders {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background: #17152A;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.uploader {
+    background: #1F1D35;
+    margin: auto;
+    width: 20%;
+    min-width: 400px;
+    border-radius: 15px;
+}
+
+.uploader form {
+    display: flex;
+    align-items: stretch;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin: auto;
+}
+
+.uploader .control {
+    background: transparent;
+    border: solid 1px white;
+    border-radius: 10px;
+    color: white;
+}
+
+.uploader .control::placeholder {
+    color: white;
+}
+
+select option {
+    background: #17152A;
+    border: none;
+}
+
+textarea {
+    min-height: 165px;
+}
+
+.uploader button {
+    background: #B249F2;
+    border: solid 1px #B249F2;
+    border-radius: 10px;
+    color: #DBDCE1;
+}
+
+.uploader button:disabled {
+    background: #b149f269;
+    filter: blur(0.5px);
+}
+
+.uploader button:disabled:hover {
+    background: #b149f269;
+    filter: blur(0.5px);
+}
+
+.uploader button:hover {
+    background: transparent;
+    transition: 250ms;
+}
+
+.dropZone {
+    background: #39325C;
+    border-radius: 15px;
+    border: 3px #B249F2 dotted;
+    color: whitesmoke;
+    text-align: center;
+    height: 100px;
+    transition: 500ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropZone:hover {
+    background: rgba(57, 50, 92, 0.7);
+}
+
+.fileInput {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
