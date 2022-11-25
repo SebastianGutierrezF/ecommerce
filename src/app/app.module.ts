@@ -11,6 +11,8 @@ import { AddOfertaComponent } from './add-oferta/add-oferta.component';
 import { RegistroComponent } from './registro/registro.component';
 import { AddNFTComponent } from './add-nft/add-nft.component';
 import { VentasComponent } from './ventas/ventas.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { BuscadorComponent } from './buscador/buscador.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { VentasComponent } from './ventas/ventas.component';
     AddOfertaComponent,
     RegistroComponent,
     AddNFTComponent,
-    VentasComponent
+    VentasComponent,
+    NavbarComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,
