@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&display=swap');
+
+.correo {
+    position: relative;
+    width: 271px;
+    margin-bottom: 8px;
+    color: white;
+    padding: 10px 10px 10px 35px;
+}
+
+i {
+    color: white;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 10px;
+}
+
+input {
+    border-radius: 8px;
+    background-color: #1F1D35;
+    border: 1px solid white;
+    height: 20px;
+    padding: 7px;
+    width: 250px;
+    color: white;
+}
+
+.C {
+    background-color: #B249F2;
+    border: #B249F2;
+    border-radius: 5px;
+    padding: 6px;
+    color: white;
+    margin-left: 10px;
+    width: 100px;
+    text-align: center;
+}
+
+.C:hover{
+    color:black;
+    background-color:white;
+}
+
+.contenedor {
+    margin-top: 35px;
+    margin-left: 80px;
+    background-color: #17152a;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.f2 {
+    text-shadow: 0 0 60px #fff;
+    font-size: 100px;
+    font-weight: 900;
+}
+
+.botones {
+    position: static;
+    margin-top: 20px;
+}
+
+.inputs {
+    width: 33%;
+}
+
+button {
+    margin-right: 20px;
+}
+
+.p1 {
+    font-size: 15px;
+}
+
+.p2 {
+    font-size: 23px;
+    font-weight: 100;
+}
+
+img {
+    width: 600px;
+    margin: -70px;
+    margin-left: -120px;
+    margin-bottom: -110px;
+    margin-top: -125px;
+}
+
+.botones {
+    justify-content: space-between;
+}
+
+span{
+    font-size: 15px;
+}
