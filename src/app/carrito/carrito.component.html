@@ -38,58 +38,31 @@
     <!-- Cuerpo de la tabla -->
     <tbody>
 
-      <tr>
+      <tr *ngFor="let L of carrito">
         <!-- Imagen -->
         <td class="grid grid-cols-[160px_minmax(220px,_1fr)_100px] inline-block align-middle">
-          <img src="../../assets/123.png">
-          <h5 class="text-start">Mistral</h5>
+          <img [src]="L.img_a">
+          <h5 class="text-start pt-16 font-bold text-xl">{{L.nombre_a}}</h5>
         </td>
         <!-- Precio -->
-        <td class="tamano text-center">50 ETH</td>
+        <td class="tamano text-center text-xl font-bold">{{L.precio_a}} ETH</td>
         <!-- Boton de accion -->
         <td class="tamano text-center">
-          <button class="button button1">
+          <button class="button button1" (click)="borrarNFT(L.id_a)">
             <i class="fas fa-trash"></i>
           </button>
         </td>
       </tr>
 
-      <tr>
-        <!-- Imagen -->
-        <td>
-          <img src="../../assets/1234.png">
-        </td>
-        <!-- Precio -->
-        <td class="tamano text-center">50 ETH</td>
-        <!-- Boton de accion -->
-        <td class="tamano text-center">
-          <button class="button button1">
-            <i class="fas fa-trash"></i>
-          </button>
-        </td>
-      </tr>
-
-      <tr>
-        <!-- Imagen -->
-        <td>
-          <img src="../../assets/12345.png">
-        </td>
-        <!-- Precio -->
-        <td class="tamano text-center">50 ETH</td>
-        <!-- Boton de accion -->
-        <td class="tamano text-center">
-          <button class="button button1">
-            <i class="fas fa-trash"></i>
-          </button>
-        </td>
-      </tr>
 
     </tbody>
   </table>
 
   <div class="subtotal text-end">
     <div>
-      <p class="font-bold text-2xl subtotal3 ">Subtotal: <span style="color: #9E24EC"> 150 ETH </span></p>
+      <p class="font-bold text-2xl subtotal3 ">Subtotal: <span style="color: #9E24EC"> {{subTotal}} ETH </span></p>
+      <p class="font-bold text-2xl subtotal3 ">Nombre promocion: <span style="color: #9E24EC"> {{desc}}%</span></p>
+      <p class="font-bold text-2xl subtotal3 ">Total: <span style="color: #9E24EC"> {{total}} ETH </span></p>
     </div>
     <button class="pagarbutt pagarbutt1"> Pagar</button>
   </div>
