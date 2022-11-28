@@ -1,5 +1,3 @@
-
-    
 <div class="w-full h-auto gap-6 flex">
     <!-- Centro dashboard -->
     <section class="w-2/3">
@@ -7,34 +5,38 @@
         <!-- Banner -->
         <article class="flex justify-center">
 
-            <div style="background-image:url('../assets/background.png')" class="w-full h-72 relative rounded-xl bg-cover mb-12 p-10">
-                    <p class="text-blanco-fuente text-4xl font-bold tracking-wide">Explora colecciones de arte y NTFs</p>
-                    
-                    <div class="flex absolute inset-x bottom-8 my-5">
-                        <button class="w-28  flex items-center justify-center h-10 border border-blanco-fuente rounded mr-2 text-lg text-center text-blanco-fuente">
-                            Explorar
-                        </button>
-                        <button class="w-28 h-10  flex items-center justify-center bg-gradient-to-br from-rosa-resaltar to-morado-resaltar rounded ml-2 text-lg text-center text-blanco-fuente">
-                            Crear
-                        </button>
-                    </div>
+            <div style="background-image:url('../assets/background.png')"
+                class="w-full h-72 relative rounded-xl bg-cover mb-12 p-10">
+                <p class="text-blanco-fuente text-4xl font-bold tracking-wide">Explora colecciones de arte y NTFs</p>
+
+                <div class="flex absolute inset-x bottom-8 my-5">
+                    <button
+                        class="w-28  flex items-center justify-center h-10 border border-blanco-fuente rounded mr-2 text-lg text-center text-blanco-fuente">
+                        Explorar
+                    </button>
+                    <button
+                        class="w-28 h-10  flex items-center justify-center bg-gradient-to-br from-rosa-resaltar to-morado-resaltar rounded ml-2 text-lg text-center text-blanco-fuente">
+                        Crear
+                    </button>
+                </div>
             </div>
-    
+
         </article>
         <!-- Banner -->
 
         <!-- Botones trending -->
         <article class="flex justify-center">
             <div class="w-full">
-                <div class="text-2xl text-blanco-fuente font-bold my-5">Trending</div>
+                <div class="text-2xl text-blanco-fuente font-bold my-5">Categorías</div>
                 <div class="w-4/5 flex my-5 mb-8">
-                    <button class="w-28 h-9 bg-gradient-to-br from-rosa-resaltar to-morado-resaltar rounded-md mr-2 flex items-center justify-center text-center text-blanco-fuente my-auto">
-                        En vivo
+                    <!-- <button *ngFor="let C of Categorias" class="w-28 h-9 bg-gradient-to-br from-rosa-resaltar to-morado-resaltar rounded-md mr-2 flex items-center justify-center text-center text-blanco-fuente my-auto">
+                        {{C.nombre_c}}
+                    </button> -->
+                    <button (click)="ObtenerProductosxCategoria(C.id_c)" *ngFor="let C of Categorias"
+                        class="w-28 h-9 border border-rosa-resaltar rounded-md mx-2 flex items-center justify-center text-center text-blanco-fuente my-auto">
+                        {{C.nombre_c}}
                     </button>
-                    <button class="w-28 h-9 border border-rosa-resaltar rounded-md mx-2 flex items-center justify-center text-center text-blanco-fuente my-auto">
-                        Arte
-                    </button>
-                    <button class="w-28 h-9 border border-rosa-resaltar rounded-md mx-2 flex items-center justify-center text-center text-blanco-fuente my-auto">
+                    <!-- <button class="w-28 h-9 border border-rosa-resaltar rounded-md mx-2 flex items-center justify-center text-center text-blanco-fuente my-auto">
                         Música
                     </button>
                     <button class="w-28 h-9 border border-rosa-resaltar rounded-md mx-2 flex items-center justify-center text-center text-blanco-fuente my-auto">
@@ -42,7 +44,7 @@
                     </button>
                     <button class="w-28 h-9 border border-rosa-resaltar rounded-md ml-2 flex items-center justify-center text-center text-blanco-fuente my-auto">
                         Juegos
-                    </button>
+                    </button> -->
                 </div>
             </div>
         </article>
@@ -50,18 +52,20 @@
 
         <!-- Cards -->
         <article class="flex justify-center">
-        
+
             <div class="w-full grid grid-cols-3 gap-4">
-        
-                <div class="bg-morado-contenedor h-fit border border-rosa-resaltar rounded-xl p-4">
-        
-                    <article style="background-image:url('../assets/NFTrosa.png')" class="w-full h-32 rounded-xl bg-cover">
+
+                <div *ngFor="let PC of ProductosxCategoria" (click)="agregarAlCarrito(PC)"
+                    class="bg-morado-contenedor h-fit border border-rosa-resaltar rounded-xl p-4">
+
+                    <article style="background-image:url({{PC.img_a}})" class="w-full h-32 rounded-xl bg-cover">
                     </article>
-        
-                    <p class="text-blanco-fuente font-semibold tracking-wide mt-3 mb-6">Variedad infinita</p>
-        
+
+                    <p class="text-blanco-fuente font-semibold tracking-wide mt-3 mb-6">{{PC.nombre_a}}</p>
+
                     <article class="flex">
-                        <div style="background-image:url('../assets/perfil1.png')" class="w-10 h-10 bg-cover rounded-md mr-2"></div>
+                        <div style="background-image:url('../assets/perfil1.png')"
+                            class="w-10 h-10 bg-cover rounded-md mr-2"></div>
                         <div class="ml-2">
                             <p class="text-xs text-gris-fuente">Creador</p>
                             <p class="text-sm text-blanco-fuente">Jimmy Chairperson</p>
@@ -69,14 +73,14 @@
                     </article>
 
                     <article class="flex items-center mt-4">
-                        <p class="text-morado-resaltar font-bold mr-2">2.45 ETH</p>
-                        <p class="text-xs text-blanco-fuente ml-2">$172.60</p>
+                        <p class="text-morado-resaltar font-bold mr-2">{{PC.precio_a}} ETH</p>
+                        <p class="text-xs text-blanco-fuente ml-2">{{PC.precio_a | currency: 'USD'}}</p>
                     </article>
-        
+
                 </div>
-                
-        
-                <div class="bg-morado-contenedor h-fit border border-rosa-resaltar rounded-xl p-4">
+
+
+                <!-- <div class="bg-morado-contenedor h-fit border border-rosa-resaltar rounded-xl p-4">
         
                     <article style="background-image:url('../assets/NFTazul.jpg')" class="w-full h-32 rounded-xl bg-cover">
                     </article>
@@ -119,8 +123,8 @@
                         <p class="text-xs text-blanco-fuente ml-2">$172.60</p>
                     </article>
         
-                </div>
-                
+                </div> -->
+
             </div>
 
         </article>
@@ -140,21 +144,24 @@
         <article class="w-full bg-morado-contenedor rounded-xl p-4">
 
             <article class="flex justify-between items-start">
-                <p class="text-blanco-fuente text-lg font-semibold">Popular</p>
-            <p class="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-br from-rosa-resaltar to-morado-resaltar">Ver más</p>
+                <p class="text-blanco-fuente text-lg font-semibold">Nuevos</p>
+                <p
+                    class="text-sm font-semibold text-transparent bg-clip-text bg-gradient-to-br from-rosa-resaltar to-morado-resaltar">
+                    Ver más</p>
             </article>
 
-            <article class="mt-8">
+            <article class="h-80 mt-8 overflow-auto">
 
-                <div class="flex bg-gris-contenedor rounded-xl my-4 p-3 hover:shadow-rosa-resaltar/20 hover:bg-gris-contenedor hover:shadow-xl duration-300">
-                    <div style="background-image:url('../assets/mono.jpg')" class="w-12 h-12 rounded-md bg-cover mr-2"></div>
+                <div *ngFor="let P of Productos"
+                    class="flex bg-gris-contenedor rounded-xl my-4 p-3 hover:shadow-rosa-resaltar/20 hover:bg-gris-contenedor hover:shadow-xl duration-300">
+                    <div style="background-image:url({{P.img_a}})" class="w-12 h-12 rounded-md bg-cover mr-2"></div>
                     <div class="ml-3">
-                        <p class="text-blanco-fuente font-semibold traking-wide">Mono espacial</p>
-                        <p class="text-gris-fuente text-xs font-bold">0.73 ETH</p>
+                        <p class="text-blanco-fuente font-semibold traking-wide">{{P.nombre_a}}</p>
+                        <p class="text-gris-fuente text-xs font-bold">{{P.precio_a}} ETH</p>
                     </div>
                 </div>
 
-                <div class="flex bg-gris-contenedor rounded-xl my-4 p-3 hover:shadow-rosa-resaltar/20 hover:bg-gris-contenedor hover:shadow-xl duration-300">
+                <!-- <div class="flex bg-gris-contenedor rounded-xl my-4 p-3 hover:shadow-rosa-resaltar/20 hover:bg-gris-contenedor hover:shadow-xl duration-300">
                     <div style="background-image:url('../assets/calavera.png')" class="w-12 h-12 bg-cover rounded-md mr-2"></div>
                     <div class="ml-3">
                         <p class="text-blanco-fuente font-semibold traking-wide">Mono espacial</p>
@@ -168,15 +175,16 @@
                         <p class="text-blanco-fuente font-semibold traking-wide">Mono espacial</p>
                         <p class="text-gris-fuente text-xs font-bold">0.73 ETH</p>
                     </div>
-                </div>
+                </div> -->
 
             </article>
 
             <article class="flex justify-between my-8">
-                <p class="text-blanco-fuente text-lg font-semibold">Top artistas</p>
-                <button class="w-20 h-8 border border-rosa-resaltar rounded text-center flex justify-evenly">
-                    <p class="text-blanco-fuente my-auto">Hoy</p>
-                    <i class="fa-solid fa-caret-down text-blanco-fuente my-auto"></i>
+                <p class="text-blanco-fuente text-lg font-semibold">Comentarios destacados</p>
+                <button
+                    class="w-auto h-auto border border-rosa-resaltar rounded text-center flex justify-evenly px-2 py-1">
+                    <p class="text-blanco-fuente my-auto">Categoría</p>
+                    <i class="fa-solid fa-caret-down text-blanco-fuente ml-2 my-auto"></i>
                 </button>
             </article>
 
@@ -184,19 +192,22 @@
             <article>
 
                 <div class="flex my-4">
-                    <div style="background-image:url('../assets/perfil3.png')" class="w-12 h-12 bg-cover rounded-md mr-2"></div>
+                    <div style="background-image:url('../assets/perfil3.png')"
+                        class="w-12 h-12 bg-cover rounded-md mr-2"></div>
 
                     <div class="flex justify-between w-full">
                         <div>
                             <P class="text-blanco-fuente font-semibold">Jimmy Chairperson</P>
                             <P class="text-xs text-gris-fuente">@chairpersonjimmy</P>
                         </div>
-                        
-                        <button class="w-32 h-8 bg-gris-contenedor rounded-sm text-blanco-fuente text-center flex items-center justify-center">Dejar de seguir</button>
+
+                        <button
+                            class="w-32 h-8 bg-gris-contenedor rounded-sm text-blanco-fuente text-center flex items-center justify-center">Ver
+                            comentario</button>
                     </div>
                 </div>
-                
 
+                <!-- 
                 <div class="flex my-4">
                     <div style="background-image:url('../assets/perfil4.png')" class="w-12 h-12 bg-cover rounded-md mr-2"></div>
 
@@ -260,12 +271,12 @@
                         
                         <button class="w-20 h-8 bg-gradient-to-br from-rosa-resaltar to-morado-resaltar rounded-sm text-blanco-fuente text-center flex items-center justify-center">Seguir</button>
                     </div>
-                </div>
+                </div> -->
 
             </article>
             <!-- Fin top artistas -->
 
-            
+
         </article>
     </section>
     <!-- Derecho dashboard -->

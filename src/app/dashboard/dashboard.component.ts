@@ -20,16 +20,50 @@ export class DashboardComponent implements OnInit {
 
   constructor(private ds: DataService, private fb: FormBuilder) {
   }
-
-  obtenerComentarios() {
-    this.ds.post('comentario', 'obtenerComentarios', {'ida_com': this.selectedNft?.id_a}).subscribe((data: any) => {
-      if (data) {
-        this.comentarios = data;
-      }
-    })
-  }
+  Productos: any = [] ;
+  ProductosxCategoria: any = [] ;
+  Categorias: any = [] ;
+  Comentarios: any = [] ;
 
   ngOnInit(): void {
+  }
+
+  ObtenerProductos() {
+    this.ds.post('articulo', 'obtenerProductos', {}).subscribe((dato: any) => {
+      this.Productos = dato.reverse();
+    });
+  }
+
+  ObtenerProductosxCategoria(categoria: any) {
+    this.ds.post('articulo', 'obtenerProductosxCategoria', {'idcat_a': categoria}).subscribe((dato: any) => {
+      this.ProductosxCategoria = dato.reverse();
+    });
+  }
+
+  ObtenerCategorias() {
+    this.ds.post('categoria', 'traerCategorias', {}).subscribe((dato: any) => {
+      this.Categorias = dato;
+    });
+  }
+
+  obtenerComentarios() {
+    this.ds.post('comentario', 'obtenerComentarios', {}).subscribe((dato: any) => {
+      this.Comentarios = dato.reverse();
+    });
+  }
+
+  agregarAlCarrito(data: any) {
+
+    if(localStorage.getItem('carrito')){
+
+      var localComida = JSON.parse(localStorage.getItem('carrito')!);
+      localComida.push({ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio": data.precio_a, "img_a": data.img_a});
+      
+      localStorage.setItem('carrito',JSON.stringify(localComida));
+
+    } else {
+      localStorage.setItem('carrito', JSON.stringify([{ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio": data.precio_a, "img_a": data.img_a}]));
+    }
   }
 
   abrirModal(nft: Articulo) {
@@ -50,5 +84,6 @@ export class DashboardComponent implements OnInit {
       }
     })
   }
+
 
 }
