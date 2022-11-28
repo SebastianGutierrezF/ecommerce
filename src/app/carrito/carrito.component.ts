@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 export interface PeriodicElement {
   imagen: string;
@@ -23,9 +24,13 @@ export class CarritoComponent implements OnInit {
   displayedColumns: string[] = ['producto', 'precio', 'acciones'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
+  }
+
+  BackBut() {
+  this.location.back();
   }
 
 }
