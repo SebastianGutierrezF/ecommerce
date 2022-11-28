@@ -20,22 +20,20 @@ label {
 }
 
 .uploaders {
-    margin: 0px;
     width: 100%;
     height: 100%;
-    background: #17152A;
+    background: #1f1d46;
     display: flex;
-    flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
-    gap: 50px;
+    align-items: flex-start;
+    gap: 30px;
+    border-radius: 15px;
 }
 
 .uploader {
     background: #1F1D35;
-    margin: auto;
     width: 20%;
-    min-width: 400px;
+    min-width: 350px;
     border-radius: 15px;
 }
 
@@ -64,7 +62,7 @@ select option {
 }
 
 textarea {
-    min-height: 165px;
+    min-height: 100px;
 }
 
 .uploader button {

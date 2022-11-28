@@ -13,10 +13,11 @@ import { MatMenuModule } from '@angular/material/menu';
 })
 export class DashboardComponent implements OnInit {
   selectedNft?: Articulo;
-  comentarios?: Comentario[];
+  comentarios?: any[];
   comInput: FormGroup = this.fb.group({
     com: [, [Validators.required, Validators.maxLength(254)]],
-    ida_com: [, Validators.required]
+    ida_com: [, Validators.required],
+    idu_com: [, Validators.required]
   })
   modal = false;
   Productos: any = [] ;
@@ -59,7 +60,7 @@ export class DashboardComponent implements OnInit {
   }
 
   obtenerComentarios() {
-    this.ds.post('comentario', 'obtenerComentarios', {}).subscribe((dato: any) => {
+    this.ds.get('comentario', 'obtenerComentarios').subscribe((dato: any) => {
       this.comentarios = dato.reverse();
     });
   }
@@ -84,15 +85,25 @@ export class DashboardComponent implements OnInit {
     this.selectedNft = nft;
     this.obtenerComentarios();
     this.comInput.patchValue({
-      ida_com: this.selectedNft.id_a
+      ida_com: this.selectedNft.id_a,
+      idu_com: '2'
     })
     this.modal = true;
+    
+  }
+
+  cerrarModal() {
+    this.selectedNft = undefined;
+    this.modal = false;
   }
 
   insertarComentario() {
+    console.log(this.comInput.value);
+    
     this.ds.post('comentario', 'insertarComentario', this.comInput.value).subscribe((data: any) => {
       if (data) {
         this.obtenerComentarios();
+        this.comInput.reset();
       } else {
         alert("Ocurrio un error al agregar el comentario");
       }

@@ -11,7 +11,7 @@
             <input type="file" id="upNFT" class="fileInput" (change)="subirImagen($event, 'nft')">
             <input type="text" class="control" formControlName="nombre_a" placeholder="Nombre">
             <input type="number" class="control" formControlName="precio_a" placeholder="$ Precio">
-            <label for="cat" style="margin-top: 25px;">Categoría</label>
+            <label for="cat" style="margin-top: 10px;">Categoría</label>
             <select class="control" name="categorias" id="cat" formControlName="idcat_a">
                 <option disabled selected>Categoria</option>
                 <option *ngFor="let cat of categorias" [value]="cat.id_c">{{cat.nombre_c}}</option>
