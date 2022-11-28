@@ -307,6 +307,18 @@
 
 
 
+    <div *ngIf="modal" id="modal">
+        <article id="infoNft">
+            <h1>{{selectedNft?.nombre_a}}</h1>
+            <h1>{{selectedNft?.precio_a}}</h1>
+            <button>Agregar al carrito</button>
+            <img [src]="" alt="">
+        </article>
+        <article id="comentarios">
+            <input type="text">
+            <div *ngFor="let comentario of comentarios">{{comentario.com}}</div>
+        </article>
+    </div>
 
 
     </div>
