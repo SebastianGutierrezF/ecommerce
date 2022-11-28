@@ -18,8 +18,6 @@ export class CarritoComponent implements OnInit {
 
   constructor(private location: Location) {
     this.getCarrito()
-    this.desc = 0;
-
   }
 
   ngOnInit(): void {
@@ -62,6 +60,7 @@ export class CarritoComponent implements OnInit {
       this.desc = Number.parseInt(localStorage.getItem('desc_o')!);
       this.total -= this.subTotal * (this.desc / 100);
     }
+
   }
 
 }

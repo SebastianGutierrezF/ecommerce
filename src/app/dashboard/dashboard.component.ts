@@ -4,6 +4,7 @@ import { Articulo } from '../interfaces/articulo';
 import { Comentario } from '../interfaces/comentario';
 import { DataService } from '../services/data.service';
 import { MatMenuModule } from '@angular/material/menu';
+import { Oferta } from '../interfaces/oferta';
 
 
 @Component({
@@ -33,9 +34,27 @@ export class DashboardComponent implements OnInit {
     this.ObtenerProductos('todos');
     this.ObtenerCategorias();
     this.obtenerComentarios();
+    this.obtenerOfertas();
   }
 
   ngOnInit(): void {
+  }
+
+  obtenerOfertas() {
+    this.ds.get('oferta', 'obtenerOfertas').subscribe((data: any) => {
+      if (data) {
+        let desc: number = 0;
+        const hoy = new Date(Date.now());
+        data.forEach((oferta: any) => {
+          if (new Date(oferta.fechain_o) <= hoy && new Date(oferta.fechafin_o) >= hoy) {
+            desc += Number.parseInt(oferta.desc_o);
+          }
+        });
+        localStorage.setItem('desc_o', desc.toString());
+      } else {
+        alert("Ocurrio un error al intentar obtener ofertas");
+      }
+    })
   }
 
   ObtenerProductos(categoria: any) {
@@ -47,7 +66,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ObtenerProductosxCategoria(categoria: any, id: any) {
-    this.categoria = categoria;    
+    this.categoria = categoria;
     this.ds.post('articulo', 'obtenerProductosxCategoria', {'idcat_a': id}).subscribe((dato: any) => {
       this.Productos = dato.reverse();
     });
@@ -71,7 +90,7 @@ export class DashboardComponent implements OnInit {
 
       var localComida = JSON.parse(localStorage.getItem('carrito')!);
       localComida.push({ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio_a": data.precio_a, "img_a": data.img_a});
-      
+
       localStorage.setItem('carrito',JSON.stringify(localComida));
 
     }else{
@@ -89,7 +108,7 @@ export class DashboardComponent implements OnInit {
       idu_com: '2'
     })
     this.modal = true;
-    
+
   }
 
   cerrarModal() {
@@ -99,7 +118,7 @@ export class DashboardComponent implements OnInit {
 
   insertarComentario() {
     console.log(this.comInput.value);
-    
+
     this.ds.post('comentario', 'insertarComentario', this.comInput.value).subscribe((data: any) => {
       if (data) {
         this.obtenerComentarios();
