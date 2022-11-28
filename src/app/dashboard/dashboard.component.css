@@ -1,0 +1,31 @@
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    background: #1F1D35;
+    border-radius: 15px;
+    transform: translate(-50%, -50%);
+    color: #DBDCE1;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    padding: 10px;
+}
+
+.modal img {
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.infoModal {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+.modal>button {
+    align-self: flex-end;
+}

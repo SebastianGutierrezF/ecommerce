@@ -66,8 +66,8 @@
                 <article class="flex justify-center">
         
                     <div class="w-full grid grid-cols-3 gap-4">
-        
-                        <div *ngFor="let PC of Productos" (click)="agregarAlCarrito(PC)"
+                        <!-- agregarAlCarrito(PC) -->
+                        <div *ngFor="let PC of Productos" (click)="abrirModal(PC)" 
                             class="bg-morado-contenedor h-fit border border-rosa-resaltar rounded-xl p-4">
         
                             <article style="background-image:url({{PC.img_a}})" class="w-full h-32 rounded-xl bg-cover">
@@ -298,16 +298,22 @@
 
 
 
-    <div *ngIf="modal" id="modal">
-        <article id="infoNft">
-            <h1>{{selectedNft?.nombre_a}}</h1>
-            <h1>{{selectedNft?.precio_a}}</h1>
-            <button>Agregar al carrito</button>
-            <img [src]="" alt="">
+    <div *ngIf="modal" class="modal" >
+        <button (click)="cerrarModal()">X</button>
+        <article class="infoModal">
+            <div>
+                <h1>{{selectedNft?.nombre_a}}</h1>
+                <h1>ETH {{selectedNft?.precio_a}}</h1>
+                <button (click)="agregarAlCarrito(selectedNft!)" type="button">Agregar al carrito</button>
+            </div>
+            <img [src]="selectedNft?.img_a" alt="">
         </article>
-        <article id="comentarios">
-            <input type="text">
-            <div *ngFor="let comentario of comentarios">{{comentario.com}}</div>
+        <article class="comsModal">
+            <form [formGroup]="comInput">
+                <input type="text" formControlName="com">
+                <button [disabled]="comInput.invalid" (click)="insertarComentario()" type="button">Enviar</button>
+            </form>
+            <div *ngFor="let comentario of comentarios">{{comentario.com}} {{comentario.usuario_u}}</div>
         </article>
     </div>
 
