@@ -17,6 +17,9 @@ import { MatTableModule } from '@angular/material/table';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {trigger,state,style,animate,transition}from '@angular/animations';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { BuscadorComponent } from './buscador/buscador.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatSliderModule,
-    MatTableModule
+    MatTableModule,
+    MatMenuModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],

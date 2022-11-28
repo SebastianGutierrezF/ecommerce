@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,15 +9,16 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  Productos: any = [] ;
-  ProductosxCategoria: any = [] ;
+  productos: any = [] ;
+  productosTodos: any = [] ;
   Categorias: any = [] ;
   Comentarios: any = [] ;
+  categoria: any;
 
   constructor(
     private dataService: DataService
   ) {
-    this.ObtenerProductos();
+    this.ObtenerProductos('todos');
     this.ObtenerCategorias();
     this.ObtenerComentarios();
   }
@@ -23,15 +26,18 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ObtenerProductos() {
+  ObtenerProductos(nombre_c: any) {
+    this.categoria = nombre_c;
     this.dataService.post('articulo', 'obtenerProductos', {}).subscribe((dato: any) => {
-      this.Productos = dato.reverse();
+      this.productos = dato.reverse();
+      this.productosTodos = dato.reverse();
     });
   }
 
-  ObtenerProductosxCategoria(categoria: any) {
+  ObtenerProductosxCategoria(nombre_c: any, categoria: any) {
+    this.categoria = nombre_c;
     this.dataService.post('articulo', 'obtenerProductosxCategoria', {'idcat_a': categoria}).subscribe((dato: any) => {
-      this.ProductosxCategoria = dato.reverse();
+      this.productos = dato.reverse();
     });
   }
 
@@ -52,13 +58,13 @@ export class DashboardComponent implements OnInit {
     if(localStorage.getItem('carrito')){
 
       var localComida = JSON.parse(localStorage.getItem('carrito')!);
-      localComida.push({ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio": data.precio, "img_a": data.img_a});
+      localComida.push({ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio": data.precio_a, "img_a": data.img_a});
       
       localStorage.setItem('carrito',JSON.stringify(localComida));
 
     }else{
 
-      localStorage.setItem('carrito', JSON.stringify([{ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio": data.precio, "img_a": data.img_a}]));
+      localStorage.setItem('carrito', JSON.stringify([{ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio": data.precio_a, "img_a": data.img_a}]));
 
     }
   }
