@@ -1,1 +1,62 @@
-<p>registro works!</p>
+<div class="contenedor">
+    <div class="p1">
+        <strong>Explore,collect, and sell NFTs</strong>
+    </div>
+    <div>
+        <img src="/assets/nft.png" alt="">
+    </div>
+    <div class="p2">
+        <p>Registro de usuarios</p>
+    </div>
+
+    <form (ngSubmit)="guardar()" [formGroup]="Registro">
+
+        <div class="inputs">
+            <div class="correo">
+                <input type="text" class="input" formControlName="usuario_u" placeholder="Usuario">
+                <i class="fa-solid fa-user"></i>
+                <span class="form-text" *ngIf="campoEsValido('usuario_u')">
+                    Este campo es obligatorio
+                </span>
+            </div>
+
+            <div class="correo">
+                <input type="text" formControlName="nombres_u" placeholder="Nombres">
+                <i class="fa-solid fa-font"></i>
+                <span class="form-text" *ngIf="campoEsValido('nombres_u')">
+                    Este campo es obligatorio
+                </span>
+            </div>
+            
+            <div class="correo">
+                <input type="text" formControlName="apellidos_u" placeholder="Apellidos">
+                <i class="fa-solid fa-signature"></i>
+                <span class="form-text" *ngIf="campoEsValido('apellidos_u')">
+                    Este campo es obligatorio
+                </span>
+            </div>
+
+            <div class="correo">
+                <input type="text" formControlName="email_u" placeholder="Email">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="form-text" *ngIf="campoEsValido('email_u')">
+                    Este campo es obligatorio
+                </span>
+            </div>
+
+            <div class="correo">
+                <input type="password" formControlName="pass" placeholder="Contraseña">
+                <i class="fa-solid fa-key"></i>
+                <span class="form-text" *ngIf="campoEsValido('pass')">
+                    Este campo es obligatorio
+                </span>
+            </div>
+
+            <div class="botones">
+                <button class="C" [disabled]="!Registro.valid">Registrarse</button>
+            </div>
+
+        </div>
+
+    </form>
+</div>

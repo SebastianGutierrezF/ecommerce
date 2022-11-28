@@ -12,11 +12,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegistroComponent implements OnInit {
 
   Registro: FormGroup = this.fb.group({
-    usuario_u : [, [Validators.required, Validators.maxLength(40)]],
-    nombres_u : [, [Validators.required, Validators.maxLength(40)]],
-    apellidos_u : [, [Validators.required, Validators.maxLength(40)]],
-    email_u : [, [Validators.required, Validators.maxLength(40)]],
-    pass : [, [Validators.required, Validators.maxLength(40)]],
+    usuario_u : [, Validators.required],
+    nombres_u : [, Validators.required],
+    apellidos_u : [, Validators.required],
+    email_u : [, Validators.required],
+    pass : [, Validators.required],
   });
 
   constructor(private fb: FormBuilder, private data: DataService, private router: Router) {
@@ -31,15 +31,16 @@ export class RegistroComponent implements OnInit {
   }
 
   guardar() {
-    this.data.post('usuario', 'agregarusuario', this.Registro.value).subscribe((dato: any) => {
+    this.data.post('usuario', 'agregarUsuario', this.Registro.value).subscribe((dato: any) => {
       console.log(dato);
-      if (dato['estatus']) {
+      if (['estatus']) {
 
         // Swal.fire(
         //   'Exito!',
         //   'El usuario ha sido registrado',
         //   'success'
         // )
+        console.log("Exito");
 
         this.Registro.reset();
         this.router.navigate(['login']);
