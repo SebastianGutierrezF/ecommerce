@@ -69,13 +69,13 @@ export class DashboardComponent implements OnInit {
     if(localStorage.getItem('carrito')){
 
       var localComida = JSON.parse(localStorage.getItem('carrito')!);
-      localComida.push({ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio": data.precio, "img_a": data.img_a});
+      localComida.push({ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio_a": data.precio_a, "img_a": data.img_a});
       
       localStorage.setItem('carrito',JSON.stringify(localComida));
 
     }else{
 
-      localStorage.setItem('carrito', JSON.stringify([{ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio": data.precio, "img_a": data.img_a}]));
+      localStorage.setItem('carrito', JSON.stringify([{ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio_a": data.precio_a, "img_a": data.img_a}]));
 
     }
   }
