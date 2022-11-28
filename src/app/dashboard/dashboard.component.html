@@ -40,11 +40,11 @@
                             <!-- <button *ngFor="let C of Categorias" class="w-28 h-9 bg-gradient-to-br from-rosa-resaltar to-morado-resaltar rounded-md mr-2 flex items-center justify-center text-center text-blanco-fuente my-auto">
                                 {{C.nombre_c}}
                             </button> -->
-                            <button (click)="ObtenerProductos('todos')" [ngClass]="{'bg-gradient-to-br from-rosa-resaltar to-morado-resaltar': categoria === 'todos'}"
+                            <button (click)="ObtenerProductos('todos')" [ngClass]="{'bg-gradient-to-br from-rosa-resaltar to-morado-resaltar': categoria == 'todos'}"
                                 class="w-28 h-9 border border-rosa-resaltar rounded-md mx-2 flex items-center justify-center text-center text-blanco-fuente my-auto">
                                 Todos
                             </button>
-                            <button (click)="ObtenerProductosxCategoria(C.nombre_c, C.id_c)" *ngFor="let C of Categorias" [ngClass]="{'bg-gradient-to-br from-rosa-resaltar to-morado-resaltar': categoria === C.nombre_c}"
+                            <button (click)="ObtenerProductosxCategoria(C.nombre_c, C.id_c)" *ngFor="let C of Categorias" [ngClass]="{'bg-gradient-to-br from-rosa-resaltar to-morado-resaltar': categoria == C.nombre_c}"
                                 class="w-28 h-9 border border-rosa-resaltar rounded-md mx-2 flex items-center justify-center text-center text-blanco-fuente my-auto">
                                 {{C.nombre_c}}
                             </button>
@@ -67,7 +67,7 @@
         
                     <div class="w-full grid grid-cols-3 gap-4">
         
-                        <div *ngFor="let PC of productos" (click)="agregarAlCarrito(PC)"
+                        <div *ngFor="let PC of Productos" (click)="agregarAlCarrito(PC)"
                             class="bg-morado-contenedor h-fit border border-rosa-resaltar rounded-xl p-4">
         
                             <article style="background-image:url({{PC.img_a}})" class="w-full h-32 rounded-xl bg-cover">
@@ -199,15 +199,6 @@
                             <i class="fa-solid fa-caret-down text-blanco-fuente ml-2 my-auto"></i>
                         </button>
                     </article>
-
-
-                    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
-</mat-menu>
-
-
         
                     <!-- inicio top artistas -->
                     <article>

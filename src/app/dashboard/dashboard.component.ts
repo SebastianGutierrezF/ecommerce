@@ -13,7 +13,7 @@ import { MatMenuModule } from '@angular/material/menu';
 })
 export class DashboardComponent implements OnInit {
   selectedNft?: Articulo;
-  comentarios?: Comentario;
+  comentarios?: Comentario[];
   comInput: FormGroup = this.fb.group({
     com: [, [Validators.required, Validators.maxLength(254)]],
     ida_com: [, Validators.required]
@@ -22,14 +22,14 @@ export class DashboardComponent implements OnInit {
   Productos: any = [] ;
   ProductosxCategoria: any = [] ;
   Categorias: any = [] ;
-  Comentarios: any = [] ;
   categoria: any;
+  productosTodos: any;
 
   constructor(
     private ds: DataService,
     private fb: FormBuilder
   ) {
-    this.ObtenerProductos();
+    this.ObtenerProductos('todos');
     this.ObtenerCategorias();
     this.obtenerComentarios();
   }
@@ -37,15 +37,18 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ObtenerProductos() {
-    this.ds.post('articulo', 'obtenerProductos', {}).subscribe((dato: any) => {
+  ObtenerProductos(categoria: any) {
+    this.categoria = categoria;
+    this.ds.get('articulo', 'obtenerProductos').subscribe((dato: any) => {
       this.Productos = dato.reverse();
+      this.productosTodos = dato.reverse();
     });
   }
 
-  ObtenerProductosxCategoria(categoria: any) {
-    this.ds.post('articulo', 'obtenerProductosxCategoria', {'idcat_a': categoria}).subscribe((dato: any) => {
-      this.ProductosxCategoria = dato.reverse();
+  ObtenerProductosxCategoria(categoria: any, id: any) {
+    this.categoria = categoria;    
+    this.ds.post('articulo', 'obtenerProductosxCategoria', {'idcat_a': id}).subscribe((dato: any) => {
+      this.Productos = dato.reverse();
     });
   }
 
@@ -57,7 +60,7 @@ export class DashboardComponent implements OnInit {
 
   obtenerComentarios() {
     this.ds.post('comentario', 'obtenerComentarios', {}).subscribe((dato: any) => {
-      this.Comentarios = dato.reverse();
+      this.comentarios = dato.reverse();
     });
   }
 
