@@ -11,6 +11,7 @@
     flex-flow: column nowrap;
     gap: 10px;
     padding: 10px;
+    max-height: 500px;
 }
 
 .modal img {
@@ -28,4 +29,8 @@
 
 .modal>button {
     align-self: flex-end;
+}
+
+.comsModal {
+    overflow: scroll;
 }
