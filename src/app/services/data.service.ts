@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
+  
   // baseUrl = 'https://enefty-webservice.herokuapp.com/controller/';
   baseUrl = 'http://localhost/enefty-webservice/controller/';
   usd = 0;

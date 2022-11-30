@@ -38,7 +38,6 @@ export class DashboardComponent implements OnInit {
     this.ObtenerCategorias();
     this.obtenerComentarios();
     this.obtenerOfertas();
-    this.ds.getPrice();
   }
 
   ngOnInit(): void {
@@ -66,7 +65,7 @@ export class DashboardComponent implements OnInit {
     this.categoria = categoria;
     this.ds.get('articulo', 'obtenerProductos').subscribe((dato: any) => {
       this.Productos = dato.reverse();
-      this.productosTodos = dato;
+      this.productosTodos = dato.reverse();
     });
   }
 
