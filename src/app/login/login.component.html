@@ -1,1 +1,32 @@
-<p>login works!</p>
+<div class="contenedor">
+    <div class="p1">
+        <strong>Explore,collect, and sell NFTs</strong>
+    </div>
+    <div>
+        <img src="/assets/nft.png" alt="">
+    </div>
+    <div class="p2">
+        <p>¡Bienvenido de vuelta!</p>
+    </div>
+    <form [formGroup]="formulario">
+
+        <div class="inputs">
+            <div class="correo">
+                <input type="text" class="input" placeholder="      Correo" formControlName="usuario_u">
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </div>
+            <div class="correo">
+                <input type="password" data-lpignore="true" placeholder="      Contraseña" formControlName="pass">
+                <i class="fa-solid fa-key"></i>
+
+            </div>
+            <div class="botones">
+                <button class="R">Registrarme</button> |
+                <button class="C" (click)="Login()">Continuar</button>
+            </div>
+
+        </div>
+    </form>
+</div>
