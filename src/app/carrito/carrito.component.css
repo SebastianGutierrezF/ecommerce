@@ -109,3 +109,49 @@ tr{
   color: white;
 }
 
+.paymodal {
+  width: 657px;
+  height: 367.5px;
+  background: #171529;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+}
+
+.paymodal>button {
+  align-self: flex-start;
+}
+
+.paybutton {
+  width: 155px;
+  height: 40px;
+  border: #9E24EC 1px solid;
+  border-radius: 15px;
+  transition-duration: 0.4s;
+}
+
+.paybutton:hover {
+  background-color: #9E24EC;
+  color: white;
+}
+
+.modalBackdrop {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+  opacity: 10%;
+  position: fixed;
+  top: 0;
+  left: 0%;
+}
+
