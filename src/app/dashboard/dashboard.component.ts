@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Articulo } from '../interfaces/articulo';
-import { Comentario } from '../interfaces/comentario';
 import { DataService } from '../services/data.service';
-import { MatMenuModule } from '@angular/material/menu';
-import { Oferta } from '../interfaces/oferta';
 
 
 @Component({
@@ -34,6 +31,7 @@ export class DashboardComponent implements OnInit {
     private ds: DataService,
     private fb: FormBuilder
   ) {
+    this.ds.getPrice();
     this.ObtenerProductos('todos');
     this.ObtenerCategorias();
     this.obtenerComentarios();
