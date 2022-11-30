@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Articulo } from '../interfaces/articulo';
-import { Comentario } from '../interfaces/comentario';
 import { DataService } from '../services/data.service';
-import { MatMenuModule } from '@angular/material/menu';
-import { Oferta } from '../interfaces/oferta';
 
 
 @Component({
@@ -34,11 +31,11 @@ export class DashboardComponent implements OnInit {
     private ds: DataService,
     private fb: FormBuilder
   ) {
+    this.ds.getPrice();
     this.ObtenerProductos('todos');
     this.ObtenerCategorias();
     this.obtenerComentarios();
     this.obtenerOfertas();
-    this.ds.getPrice();
   }
 
   ngOnInit(): void {
@@ -66,7 +63,7 @@ export class DashboardComponent implements OnInit {
     this.categoria = categoria;
     this.ds.get('articulo', 'obtenerProductos').subscribe((dato: any) => {
       this.Productos = dato.reverse();
-      this.productosTodos = dato;
+      this.productosTodos = dato.reverse();
     });
   }
 
