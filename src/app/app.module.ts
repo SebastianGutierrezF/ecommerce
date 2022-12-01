@@ -19,7 +19,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {trigger,state,style,animate,transition}from '@angular/animations';
+import { EthPipe } from './eth.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import {trigger,state,style,animate,transition}from '@angular/animations';
     VentasComponent,
     Admin,
     NavbarComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    EthPipe
   ],
   imports: [
     BrowserModule,
