@@ -1,22 +1,24 @@
 .modal {
+  border: #9E24EC 2px solid;
     position: fixed;
+    width: 550px;
     top: 50%;
     left: 50%;
     z-index: 2;
-    background: #1F1D35;
+    background: #171529;
     border-radius: 15px;
     transform: translate(-50%, -50%);
     color: #DBDCE1;
     display: flex;
     flex-flow: column nowrap;
-    gap: 10px;
+    gap: 5px;
     padding: 10px;
     max-height: 500px;
 }
 
 .modal img {
     width: 200px;
-    height: auto;
+    height: 200px;
     border-radius: 15px;
     overflow: hidden;
 }
@@ -24,7 +26,15 @@
 .infoModal {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
     gap: 10px;
+}
+
+.infoModal div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .modal>button {
@@ -33,4 +43,32 @@
 
 .comsModal {
     overflow: scroll;
+    width: 80%;
+    margin: 10px;
+}
+
+.botonmodal {
+  width: 129px;
+  height: 30px;
+  border: #9E24EC 1px solid;
+  border-radius: 10px;
+  transition-duration: 0.2s;
+  color: #9E24EC;;
+}
+
+.botonmodal:hover {
+  background-color: #9E24EC;
+  color: white;
+  /* fill: white; */
+}
+
+
+.inputcoment {
+  background-color: #171529;
+  border: 1px solid #9E24EC;
+  border-radius: 8px;
+}
+
+input::placeholder {
+  color: #9E24EC;
 }
