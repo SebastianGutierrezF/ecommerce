@@ -10,7 +10,7 @@
                 <article class="flex justify-center">
         
                     <div class="w-full relative rounded-xl bg-cover overflow-hidden" style="height: 242px; object-fit: cover;">
-                        <img [src]="ofertas[1]" class="rounded-lg">
+                        <img [src]="ofertas[0]" class="rounded-lg">
                         
                         <!-- <p class="text-blanco-fuente text-4xl font-bold tracking-wide">Promociones</p> -->
         
@@ -74,7 +74,7 @@
         
                             <article class="flex items-center mt-4">
                                 <p class="text-morado-resaltar font-bold mr-2">{{PC.precio_a}} ETH</p>
-                                <p class="text-xs text-blanco-fuente ml-2">{{PC.precio_a | currency: 'USD'}}</p>
+                                <p class="text-xs text-blanco-fuente ml-2">{{PC.precio_a | eth | currency: "USD"}} USD</p>
                             </article>
         
                         </div>
