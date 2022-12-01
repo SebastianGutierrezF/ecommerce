@@ -1,23 +1,23 @@
-<div class="todo" >
+<div class="todo" *ngFor="let p of info" >
     <br>
     <p class="text-white font-bold m-4 text-3xl">Perfil</p>
     <div class="m-4 grid justify-items-center ">
     <div class="flex flex-row ">
     
-        <div class="flex flex-col 11/12">
-    
-        <div class="columna h-24 w-96  m-2 rounded-xl ">
+        <div class="flex flex-col 11/12 ">
+
+        <div class="columna h-24 w-96  m-2 rounded-xl bg-gris-contenedor">
           
-            <div class="flex flex-row m-2"  >
+            <div class="flex flex-row m-2 "  >
               <img class="w-20 h-20 rounded-full" src="https://res.cloudinary.com/dmi77c4sl/image/upload/v1668438715/enefty/WhatsApp_Image_2022-11-14_at_9.09.03_AM_izdrbd.jpg">
               <div class="flex flex-col">
-              <p  class="grid justify-items-center text-white font-bold m-1 text-lg">Nam joto </p>
+              <p  class="grid justify-items-center text-white font-bold m-1 text-lg">{{p.nombres_u}} {{p.apellidos_u}}</p>
               <p  class="grid justify-items-right text-white font-bold m-1 text-xs">admin </p>
           </div>
         </div>
         </div>
     
-        <div class="columna h-24 w-96  m-2 rounded-xl ">
+        <div class="columna h-24 w-96  m-2 rounded-xl  bg-gris-contenedor ">
             <div class="grid justify-items-center">
             <div class="flex flex-row">
             <p  class="grid justify-items-center text-white font-bold m-4 text-2xl">NFT's  </p>
@@ -25,12 +25,12 @@
             </div>
             </div>
         </div>
-        <div class="columna h-24 w-96  m-2 rounded-xl ">
+        <div class="columna h-24 w-96  m-2 rounded-xl  bg-gris-contenedor">
             
         </div>
     
         </div>
-        <div class="columna h-80 w-96  m-2 rounded-xl ">
+        <div class="columna h-80 w-96  m-2 rounded-xl  bg-gris-contenedor ">
             <div class="flex flex-col">
                <br>
                <br>
@@ -39,7 +39,7 @@
                <p  class="grid justify-items-center text-white font-bold m-2 text-2xl">Saldo Actual: </p>
                <div class="grid justify-items-center">
                <div class="flex flex-row">
-               <p  class="text-white font-bold m-2 text-2xl">{{this.info.saldo_u}}</p>
+               <p  class="text-white font-bold m-2 text-2xl">{{p.saldo_u}}</p>
                <p  class="text-purple-800 font-bold m-2 text-2xl">ETH </p>
                </div>
                </div>
@@ -48,7 +48,7 @@
                <button class=" rounded-xl text-white font-semibold  py-2 px-4 border-2 border-purple-800" [formGroup]="Formulario" (click)="toggleModal()" >
                 Agregar Saldo 
               </button>
-              <div class="col-sm-9">
+           
 
   
              
@@ -58,7 +58,7 @@
 
 
     
-    <p  class="text-white font-bold m-4 text-xl">Mis NFT's</p>
+    <!-- <p  class="text-white font-bold m-4 text-xl">Mis NFT's</p> -->
     
     <!-- <div class="grid justify-items-center">
     <div class="m-4 flex flex-row ">

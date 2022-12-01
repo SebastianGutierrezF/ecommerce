@@ -22,6 +22,7 @@ export class PerfilComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private http: HttpClient, private ds: DataService,   private router: Router,) {
      this.traerUsuario()
+     console.log()
    }
 
   ngOnInit(): void {
