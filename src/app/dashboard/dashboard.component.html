@@ -10,23 +10,14 @@
         <article class="flex justify-center">
 
           <div class="w-full relative rounded-xl bg-cover overflow-hidden" style="height: 242px; object-fit: cover;">
-            <img [src]="ofertas[1]" class="rounded-lg">
-
-            <!-- <p class="text-blanco-fuente text-4xl font-bold tracking-wide">Promociones</p> -->
-
-            <!-- <div class="flex absolute inset-x bottom-8 my-5">
-                            <button
-                                class="w-28  flex items-center justify-center h-10 border border-blanco-fuente rounded mr-2 text-lg text-center text-blanco-fuente">
-                                Explorar
-                            </button>
-                            <button
-                                class="w-28 h-10  flex items-center justify-center bg-gradient-to-br from-rosa-resaltar to-morado-resaltar rounded ml-2 text-lg text-center text-blanco-fuente">
-                                Crear
-                            </button>
-                        </div> -->
+            <img [src]="ofertas[index]" class="rounded-lg">
           </div>
 
         </article>
+        <div class="arrows">
+          <button class="arrow" (click)="prevOferta()"><i class="fa-solid fa-arrow-left-long"></i></button>
+          <button class="arrow" (click)="nextOferta()"><i class="fa-solid fa-arrow-right-long"></i></button>
+        </div>
         <!-- Banner -->
 
         <!-- Botones trending -->

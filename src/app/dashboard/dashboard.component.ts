@@ -26,6 +26,7 @@ export class DashboardComponent implements OnInit {
   productosTodos: any;
   ofertas: string[] = [];
   comCatSelected?: number;
+  index: number = 0;
 
   constructor(
     private ds: DataService,
@@ -51,7 +52,7 @@ export class DashboardComponent implements OnInit {
             desc += Number.parseInt(oferta.desc_o);
             this.ofertas.push(oferta.banner_o);
           }
-        });        
+        });
         localStorage.setItem('desc_o', desc.toString());
       } else {
         alert("Ocurrio un error al intentar obtener ofertas");
@@ -150,6 +151,22 @@ export class DashboardComponent implements OnInit {
         alert("Ocurrio un error al agregar el comentario");
       }
     })
+  }
+
+  nextOferta() {
+    if (this.index >= this.ofertas.length - 1) {
+      this.index = 0;
+    } else {
+      this.index++;
+    }
+  }
+
+  prevOferta() {
+    if (this.index <= 0) {
+      this.index = this.ofertas.length - 1;
+    } else {
+      this.index--;
+    }
   }
 
 

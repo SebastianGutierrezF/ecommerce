@@ -71,3 +71,16 @@
 input::placeholder {
   color: #9E24EC;
 }
+
+.arrows {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.arrow {
+  color: white;
+  font-size: x-large;
+}
