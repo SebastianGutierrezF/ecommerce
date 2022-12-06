@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'enefty';
+  
+
+  logged() {
+    return localStorage.length > 0;
+  }
 }

@@ -19,17 +19,18 @@
                 <img src="../../assets/eth1.svg">
                 <!-- <img src="../../assets/eth2.svg"> -->
                 <p class="text-transparent bg-clip-text bg-gradient-to-br from-morado-resaltar to-rosa-resaltar font-semibold my-auto">
-                    1289 ETH</p>
+                    {{saldo_u | currency}}</p>
             </div>
         </article>
 
         <article class="w-36 flex justify-evenly">
-            <i
-                class="fa-regular fa-message text-transparent text-2xl bg-clip-text bg-gradient-to-br from-rosa-resaltar to-morado-resaltar"></i>
-            <i
-                class="fa-solid fa-chart-line text-transparent text-2xl bg-clip-text bg-gradient-to-br from-rosa-resaltar to-morado-resaltar"></i>
-            <i
-                class="fa-sharp fa-solid fa-bell text-transparent text-2xl bg-clip-text bg-gradient-to-br from-rosa-resaltar to-morado-resaltar"></i>
+            <a routerLink="ventas">
+                <i class="fa-solid fa-chart-line text-transparent text-2xl bg-clip-text bg-gradient-to-br from-rosa-resaltar to-morado-resaltar cursor-pointer"></i>
+            </a>
+            <!-- <i class="fa-sharp fa-solid fa-bell text-transparent text-2xl bg-clip-text bg-gradient-to-br from-rosa-resaltar to-morado-resaltar"></i> -->
+            <a (click)="logout()">
+                <i class="text-transparent text-2xl bg-clip-text bg-gradient-to-br from-rosa-resaltar to-morado-resaltar fas fa-sign-out-alt cursor-pointer"></i>
+            </a>
         </article>
 
         <a routerLink="/perfil">
