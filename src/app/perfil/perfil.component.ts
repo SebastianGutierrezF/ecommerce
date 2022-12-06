@@ -12,7 +12,7 @@ import { DataService } from '../services/data.service';
 export class PerfilComponent implements OnInit {
   info: any = [];
   modal = false;
-  id_u = 1;
+ 
 
   Formulario: FormGroup = this.fb.group({
     id_u: [, ],
@@ -27,7 +27,7 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.Formulario.patchValue({
-      id_u: 1,
+      id_u: '',
       saldo_u: '',
      
    
