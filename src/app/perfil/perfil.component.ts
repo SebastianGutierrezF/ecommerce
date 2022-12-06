@@ -19,9 +19,11 @@ export class PerfilComponent implements OnInit {
     saldo_u: [, [Validators.required]],
 
   });
+  infoVentas: any;
 
   constructor(private fb: FormBuilder, private ds: DataService, private router: Router, private location: Location) {
-     this.traerUsuario()
+     this.traerUsuario();
+     this.traerVentas();
      console.log()
    }
 
@@ -31,19 +33,28 @@ export class PerfilComponent implements OnInit {
       saldo_u: ''
     });
   }
-
-  traerUsuario() {
-    this.ds.post('usuario', 'traerUsuarioxid', {id_u: localStorage.getItem('id_u')}).subscribe((data: any) => {
-      if (data) {
-        this.info = data;
-        console.log(this.info)
-      } else {
-        alert('No pudimos obtener las categorías.');
-      }
-    })
-
-  }
-
+    traerUsuario() {
+      this.ds.post('usuario', 'traerUsuarioxid', {id_u: localStorage.getItem('id_u')}).subscribe((data: any) => {
+        if (data) {
+          this.info = data;
+          console.log(this.info)
+        } else {
+          alert('No pudimos obtener las categorías.');
+        }
+      })
+  
+    }
+    traerVentas() {
+      this.ds.post('venta', 'traerVentasUsuario', {idu_a: localStorage.getItem('id_u')}).subscribe((data: any) => {
+        if (data) {
+          this.infoVentas = data;
+          console.log(this.infoVentas)
+        } else {
+          alert('No pudimos obtener las ventas.');
+        }
+      })
+  
+    }
   agregarSaldo() {
     this.ds.post('usuario', 'agregarSaldo', this.Formulario.value).subscribe((dato: any) => {
       console.log(dato);

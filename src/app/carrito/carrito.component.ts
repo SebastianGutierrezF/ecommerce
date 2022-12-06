@@ -15,6 +15,8 @@ export class CarritoComponent implements OnInit {
   subTotal: number = 0;
   desc = 0;
   modal = false;
+  saldo_u = "";
+  saldoFinal = 0;
 
   displayedColumns: string[] = ['producto', 'precio', 'acciones'];
 
@@ -69,6 +71,8 @@ export class CarritoComponent implements OnInit {
   }
 
   abrirModal() {
+    this.saldo_u = localStorage.getItem('saldo_u')!;
+    this.saldoFinal = Number.parseInt(this.saldo_u) - this.total;
     this.modal = true;
   }
 
@@ -79,6 +83,10 @@ export class CarritoComponent implements OnInit {
   /* localStorage.getItem('id_u'), */
 
   pagar() {
+    if (this.saldoFinal < 0) {
+      alert("No tienes saldo suficiente para realizar esta compra");
+      return;
+    }
     const venta = {
       idu_v: 1,
       monto_v: this.subTotal,
@@ -88,13 +96,16 @@ export class CarritoComponent implements OnInit {
     }
     this.ds.post('venta', 'comprar', venta).subscribe((data: any) => {
       if (data) {
-        console.log(data);
+        console.log(data.DATA.saldo_u);
+        alert("Compra realizada con éxito");
+        localStorage.setItem("saldo_u", data.DATA.saldo_u);
+        this.saldo_u = localStorage.getItem("saldo_u")!;
+        this.location.back();
+        localStorage.removeItem('carrito');
       } else {
-        console.log("Ocurrio un error, pendejo");
+        alert("Ocurrio un error");
       }
     })
-    console.log(this.nfts);
-
     this.modal = false
   }
 
