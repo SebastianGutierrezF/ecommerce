@@ -114,7 +114,6 @@ export class DashboardComponent implements OnInit {
 
       var localCarrito = JSON.parse(localStorage.getItem('carrito')!);
       localCarrito.push({ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio_a": data.precio_a, "img_a": data.img_a});
-
       localStorage.setItem('carrito',JSON.stringify(localCarrito));
 
     }else{

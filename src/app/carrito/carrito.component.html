@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-10">
 
 
-  <div class="grid grid-cols-3 gap-3 flex justify-between mt-10">
+  <div class="grid grid-cols-3 gap-3 justify-between mt-10">
     <div class="text-white text-center my-auto mouse" (click)="BackBut()">
       <i class="fas fa-chevron-left text-5xl inline-block align-middle mr-3"></i>
       <span class="inline-block align-middle">Continuar Comprando</span>
@@ -40,7 +40,7 @@
 
       <tr *ngFor="let L of carrito">
         <!-- Imagen -->
-        <td class="grid grid-cols-[160px_minmax(220px,_1fr)_100px] inline-block align-middle">
+        <td class="grid grid-cols-[160px_minmax(220px,_1fr)_100px] align-middle">
           <img [src]="L.img_a">
           <h5 class="text-start pt-16 font-bold text-xl">{{L.nombre_a}}</h5>
         </td>
@@ -62,7 +62,7 @@
     <div>
       <p class="font-bold text-l subtotal3 ">Subtotal: <span style="color: #9E24EC"> {{subTotal}} ETH </span></p>
       <p class="text-l subtotal3 ">Descuento: <span style="color: #9E24EC"> {{desc}}%</span></p>
-      <p class="font-bold text-3xl subtotal3 ">Total: <span style="color: #9E24EC"> {{total}} ETH </span></p>
+      <p class="font-bold text-3xl subtotal3 ">Total: <span style="color: #9E24EC"> {{total | number}} ETH </span></p>
     </div>
     <button class="pagarbutt pagarbutt1" (click)="abrirModal()"> Pagar</button>
   </div>
@@ -78,12 +78,12 @@
     <p class="text-2xl font-bold pt-2">¿Estas seguro que deseas comprar?</p>
   </div>
   <div class="text-center">
-    <p>Saldo Actual:</p>
-    <p class="text-4xl font-bold"><span style="color: #9E24EC">347</span> ETH <i class="fas fa-caret-down pl-1" style="color: #9E24EC;"></i></p>
+    <p>Saldo Actual: {{saldo_u | currency}}</p>
+    <p class="text-4xl font-bold"><span style="color: #9E24EC">{{total | number}}</span> ETH <i class="fas fa-caret-down pl-1" style="color: #9E24EC;"></i></p>
   </div>
   <div class="text-center">
     <p>Nuevo Saldo:</p>
-    <p class="text-5xl font-bold">196 <span style="color: #9E24EC">ETH</span> <i class="fas fa-minus pl-2"></i></p>
+    <p class="text-5xl font-bold">{{saldoFinal}} <span style="color: #9E24EC">ETH</span> <i class="fas fa-minus pl-2"></i></p>
   </div>
   <div class="pt-4">
     <button class="paybutton" (click)="pagar()">Pagar</button>
