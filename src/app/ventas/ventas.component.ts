@@ -17,6 +17,8 @@ export class VentasComponent implements OnInit {
     this.ds.get('venta', 'traerVentas').subscribe((data: any) => {
       if (data) {
         this.ventas = data;
+        console.log(this.ventas);
+        
       }
     })
 
@@ -26,10 +28,11 @@ export class VentasComponent implements OnInit {
   }
 
   buscarArticulos(id_v: number) {
+    this.articulos = [];
     this.ds.post('venta', 'traerArticulos', {id_v: id_v}).subscribe((data: any) => {
       if (data) {
         this.articulos = data;
-        this.acordeon = true;
+        this.acordeon = true;        
       }
     })
   }

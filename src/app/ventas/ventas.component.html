@@ -1,6 +1,80 @@
-<div *ngIf="acordeon">
-    <div *ngFor="let articulo of articulos">{{articulo.nombre_a}}</div>
+<!-- <div class="w-full md:w-3/5 mx-auto p-8">
+         <p>Open <strong>multiple</strong></p>
+         <div class="shadow-md">
+            <div class="tab w-full overflow-hidden border-t">
+               <input class="absolute opacity-0 " id="tab-multi-one" type="checkbox" name="tabs">
+               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-one">Label One</label>
+               <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                  <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+               </div>
+            </div>
+            <div class="tab w-full overflow-hidden border-t">
+               <input class="absolute opacity-0" id="tab-multi-two" type="checkbox" name="tabs">
+               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-two">Label Two</label>
+               <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                  <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+               </div>
+            </div>
+            <div class="tab w-full overflow-hidden border-t">
+               <input class="absolute opacity-0" id="tab-multi-three" type="checkbox" name="tabs">
+               <label class="block p-5 leading-normal cursor-pointer" for="tab-multi-three">Label Three</label>
+               <div class="tab-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">
+                  <p class="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
+               </div>
+            </div>
+         </div>
+      </div>  -->
+
+<div class="flex justify-center">
+    <p class="text-3xl text-blanco-fuente font-semibold tracking-widest">Ventas</p>
 </div>
-<div *ngFor="let venta of ventas" (click)="buscarArticulos(venta.id_v)">
-    {{venta.id_v}} {{venta.fecha_v | date}} {{venta.monto_v}} {{venta.desc_v}} {{venta.mFinal_v}} {{venta.usuario_u}}
+
+<div class="w-full md:w-3/5 mx-auto p-8 pt-16 text-blanco-fuente">
+    <div class="shadow-md">
+
+        <label class="flex justify-evenly items-center p-5 leading-normal cursor-pointer text-gris-fuente text-lg">
+            <div>Fecha</div>
+            <div>Precio</div>
+            <div>Descuento</div>
+            <div>Total</div>
+            <div>Usuario</div>
+        </label>
+        <div class="tab w-full overflow-hidden border-t" *ngFor="let venta of ventas"
+            (click)="buscarArticulos(venta.id_v)">
+            <input class="absolute opacity-0" [id]="'tab-single-' + venta.id_v" type="radio" name="tabs">
+            <label class="block p-5 leading-normal cursor-pointer border-morado-resaltar"
+                [for]="'tab-single-'+venta.id_v">
+                <div class="flex items-center justify-evenly">
+                    <div class="flex items-center justify-center">
+                        {{venta.fecha_v | date: 'MMM/d/yy' }}
+                    </div>
+                    <div class="flex items-center justify-center">
+                        {{venta.monto_v}} ETH
+                    </div>
+                    <div [ngClass]="{'text-green-700': venta.desc_v > 0}">
+                        {{venta.desc_v | percent}}
+                    </div>
+                    <div class="flex items-center justify-center">
+                        {{venta.mFinal_v}} ETH
+                    </div>
+                    <div class="flex items-center justify-center">
+                        {{venta.usuario_u}}
+                    </div>
+                </div>
+            </label>
+
+            <div class="tab-content overflow-hidden border-x-2 bg-transparent border-morado-resaltar leading-normal">
+                <div *ngFor="let articulo of articulos" class="flex justify-evenly p-5">
+                    <div>
+                        {{articulo.nombre_a}}
+                    </div>
+                    <div>
+                        {{articulo.precio_a}} ETH
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 </div>
