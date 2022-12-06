@@ -47,7 +47,7 @@ input {
 
 .contenedor {
     margin-top: 35px;
-    margin-left: 80px;
+    margin-left: 100px;
     background-color: #17152a;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
@@ -95,4 +95,23 @@ img {
 
 span{
     font-size: 15px;
+}
+
+.return{
+   
+    position: absolute;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.volver{
+    position: absolute;
+    color:white;
+    margin-left: 35px;
+    font-size: 20px;
+    top:-25px;
+}
+
+.volver:hover{
+    color:#B249F2;
 }

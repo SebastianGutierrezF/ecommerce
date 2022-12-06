@@ -1,1 +1,6 @@
-<p>ventas works!</p>
+<div *ngIf="acordeon">
+    <div *ngFor="let articulo of articulos">{{articulo.nombre_a}}</div>
+</div>
+<div *ngFor="let venta of ventas" (click)="buscarArticulos(venta.id_v)">
+    {{venta.id_v}} {{venta.fecha_v | date}} {{venta.monto_v}} {{venta.desc_v}} {{venta.mFinal_v}} {{venta.usuario_u}}
+</div>
