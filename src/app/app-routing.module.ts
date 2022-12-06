@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'registro', component: RegistroComponent},
   {path: '', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'ventas', component: VentasComponent, canActivate: [AuthGuard]},
-  {path: 'perfil', component: PerfilComponent},
+  {path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard]},
   {path: 'carrito', component: CarritoComponent, canActivate: [AuthGuard]},
   {path: 'admin', component: Admin, canActivate: [AuthGuard]},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
