@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-perfil',
@@ -16,10 +17,10 @@ export class PerfilComponent implements OnInit {
   Formulario: FormGroup = this.fb.group({
     id_u: [, ],
     saldo_u: [, [Validators.required]],
- 
+
   });
 
-  constructor(private fb: FormBuilder, private ds: DataService, private router: Router,) {
+  constructor(private fb: FormBuilder, private ds: DataService, private router: Router, private location: Location) {
      this.traerUsuario()
      console.log()
    }
@@ -42,7 +43,7 @@ export class PerfilComponent implements OnInit {
     })
 
   }
- 
+
   agregarSaldo() {
     this.ds.post('usuario', 'agregarSaldo', this.Formulario.value).subscribe((dato: any) => {
       console.log(dato);
@@ -55,5 +56,9 @@ export class PerfilComponent implements OnInit {
 
   toggleModal(){
     this.showModal = !this.showModal;
+  }
+
+  BackBut() {
+    this.location.back();
   }
 }

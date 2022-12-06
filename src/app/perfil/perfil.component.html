@@ -1,13 +1,17 @@
 <div class="todo" *ngFor="let p of info" >
     <br>
+    <div class="text-white my-auto mouse" (click)="BackBut()">
+      <i class="fas fa-chevron-left text-5xl inline-block align-middle mr-3" style="color: #9E24EC;"></i>
+      <span class="inline-block">Continuar Comprando</span>
+    </div>
     <p class="text-white font-bold m-4 text-3xl">Perfil</p>
     <div class="m-4 grid justify-items-center ">
     <div class="flex flex-row ">
-    
+
         <div class="flex flex-col 11/12 ">
 
         <div class="columna h-24 w-96  m-2 rounded-xl bg-gris-contenedor">
-          
+
             <div class="flex flex-row m-2 "  >
               <img class="w-20 h-20 rounded-full" src="https://res.cloudinary.com/dmi77c4sl/image/upload/v1668438715/enefty/WhatsApp_Image_2022-11-14_at_9.09.03_AM_izdrbd.jpg">
               <div class="flex flex-col">
@@ -16,7 +20,7 @@
           </div>
         </div>
         </div>
-    
+
         <div class="columna h-24 w-96  m-2 rounded-xl  bg-gris-contenedor ">
             <div class="grid justify-items-center">
             <div class="flex flex-row">
@@ -26,9 +30,9 @@
             </div>
         </div>
         <div class="columna h-24 w-96  m-2 rounded-xl  bg-gris-contenedor">
-            
+
         </div>
-    
+
         </div>
         <div class="columna h-80 w-96  m-2 rounded-xl  bg-gris-contenedor ">
             <div class="flex flex-col">
@@ -46,20 +50,20 @@
                <br>
                <br>
                <button class=" rounded-xl text-white font-semibold  py-2 px-4 border-2 border-purple-800" [formGroup]="Formulario" (click)="toggleModal()" >
-                Agregar Saldo 
+                Agregar Saldo
               </button>
-           
 
-  
-             
+
+
+
             </div>
 
-           
 
 
-    
+
+
     <!-- <p  class="text-white font-bold m-4 text-xl">Mis NFT's</p> -->
-    
+
     <!-- <div class="grid justify-items-center">
     <div class="m-4 flex flex-row ">
         <img class="w-40 h-32 m-2 rounded-lg" src="https://res.cloudinary.com/dmi77c4sl/image/upload/v1668391783/enefty/XQP24CTNQND2TBDZ7AQN54D44Y_akuvkh.jpg">
@@ -74,9 +78,9 @@
 
 
     <!-- modal -->
-    
-       
- 
+
+
+
 
   <div *ngIf="showModal" class=" overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex ">
     <div class="relative w-auto my-6 mx-auto max-w-6xl ">
@@ -106,16 +110,16 @@
                     </div>
                 </div>
             </form>
-              
+
             </div>
-       
+
         <!--footer-->
         <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
           <button class="rounded-xl text-white font-semibold  py-2 px-4 border-2 border-purple-800" type="button" (click)="toggleModal()">
             Cerrar
           </button>
           <button class=" rounded-xl text-white font-semibold  py-2 px-4 border-2 border-purple-800" [formGroup]="Formulario" (click)="agregarSaldo()" >
-            Agregar Saldo 
+            Agregar Saldo
           </button>
         </div>
       </div>
@@ -124,4 +128,3 @@
   </div>
   <div *ngIf="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>`
 </div>
-    
