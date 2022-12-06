@@ -1,5 +1,5 @@
 <div class="flex flex-col gap-6 p-6">
-    <app-buscador></app-buscador>
+    <app-buscador *ngIf="logged()"></app-buscador>
     <div class="flex gap-6">
         <div class="w-full">
             <router-outlet>
