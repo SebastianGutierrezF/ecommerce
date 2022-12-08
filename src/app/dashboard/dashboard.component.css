@@ -19,7 +19,30 @@
 .modal img {
     height: 200px;
     border-radius: 15px;
-    overflow: hidden;
+    overflow: hidden;   
+}
+
+.fade-in {
+  animation: spin 6s linear infinite;
+  height: 343px;
+  object-fit: contain;
+  object-position: center;
+}
+
+
+@keyframes spin {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .infoModal {

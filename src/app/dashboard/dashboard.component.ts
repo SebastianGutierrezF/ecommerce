@@ -38,6 +38,7 @@ export class DashboardComponent implements OnInit {
     this.ObtenerCategorias();
     this.obtenerComentarios();
     this.obtenerOfertas();
+    setInterval(() => this.nextOferta(), 6000);
   }
 
   ngOnInit(): void {
