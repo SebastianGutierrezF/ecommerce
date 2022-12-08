@@ -15,7 +15,7 @@ export class RegistroComponent implements OnInit {
     usuario_u : [, Validators.required],
     nombres_u : [, Validators.required],
     apellidos_u : [, Validators.required],
-    email_u : [, Validators.required],
+    email_u : [, [Validators.required, Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)]],
     pass : [, Validators.required],
   });
 
