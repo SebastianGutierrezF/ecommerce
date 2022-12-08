@@ -118,7 +118,7 @@ tr{
   align-items: center;
   gap: 10px;
   z-index: 2;
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

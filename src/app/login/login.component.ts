@@ -28,7 +28,7 @@ formulario:  FormGroup = this.fb.group({
     this.ds.post('usuario', 'login', this.formulario.value).subscribe((data: any) => {
       if (data.id_u != 0) {
         localStorage.setItem('id_u', data.id_u);
-        localStorage.setItem('saldo_u', data.saldo_u);
+        // localStorage.setItem('saldo_u', data.saldo_u);
         if (data.id_u == 1) {
           localStorage.setItem('admin', "1");
         } else {

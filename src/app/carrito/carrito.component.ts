@@ -24,7 +24,17 @@ export class CarritoComponent implements OnInit {
 
   constructor(private location: Location, private ds: DataService, private router: Router) {
     this.getCarrito();
-    this.saldo_u = localStorage.getItem('saldo_u')!;
+    this.traerUsuario();
+  }
+
+  traerUsuario() {
+    this.ds.post('usuario', 'traerUsuarioxid', { id_u: localStorage.getItem('id_u') }).subscribe((data: any) => {
+      if (data) {
+        this.saldo_u = data[0].saldo_u;
+      } else {
+        alert('No pudimos obtener el usuario.');
+      }
+    })
   }
 
   ngOnInit(): void {
@@ -37,6 +47,7 @@ export class CarritoComponent implements OnInit {
   getCarrito() {
     this.carrito = JSON.parse(localStorage.getItem("carrito")!);
     if (this.carrito) {
+      this.nfts.splice(0);
       this.carrito.forEach((nft: any) => {
         this.nfts.push(nft.id_a);
       });
@@ -59,6 +70,7 @@ export class CarritoComponent implements OnInit {
     localStorage.removeItem("carrito");
     localStorage.setItem("carrito", JSON.stringify(carritoAux));
     this.carrito = carritoAux;
+    this.getCarrito();
     this.calcularTotal();
   }
 
@@ -79,7 +91,7 @@ export class CarritoComponent implements OnInit {
   }
 
   abrirModal() {
-    this.saldo_u = localStorage.getItem('saldo_u')!;
+    this.traerUsuario();
     this.saldoFinal = Number.parseFloat(this.saldo_u) - this.total;
     this.modal = true;
   }
@@ -103,8 +115,7 @@ export class CarritoComponent implements OnInit {
         location.reload();
         if (data) {
           alert("Compra realizada con éxito");
-          localStorage.setItem("saldo_u", data.DATA.saldo_u);
-          this.saldo_u = localStorage.getItem("saldo_u")!;
+          this.saldo_u = data.DATA.saldo_u;
           localStorage.removeItem('carrito');
         } else {
           alert("Ocurrio un error");
