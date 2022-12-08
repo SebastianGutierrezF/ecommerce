@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Articulo } from '../interfaces/articulo';
 import { DataService } from '../services/data.service';
 
@@ -111,16 +112,21 @@ export class DashboardComponent implements OnInit {
   agregarAlCarrito(data: any) {
 
     if(localStorage.getItem('carrito')){
-
-      var localCarrito = JSON.parse(localStorage.getItem('carrito')!);
+      let localCarrito = JSON.parse(localStorage.getItem('carrito')!);
+      let encontrado = localCarrito.find((nft: any) => {
+        return nft.id_a == data.id_a;
+      })
+      if (encontrado) {
+        alert("Ya lo tienes agregado al carrito");
+        return;
+      }
       localCarrito.push({ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio_a": data.precio_a, "img_a": data.img_a});
       localStorage.setItem('carrito',JSON.stringify(localCarrito));
-
-    }else{
-
+    } else {
       localStorage.setItem('carrito', JSON.stringify([{ "id_a": data.id_a, "nombre_a": data.nombre_a, "precio_a": data.precio_a, "img_a": data.img_a}]));
-
     }
+    alert("NFT agregado al carrito");
+    this.cerrarModal();
   }
 
   abrirModal(nft: Articulo) {
@@ -128,8 +134,7 @@ export class DashboardComponent implements OnInit {
     this.comentarioPorNft(this.selectedNft.id_a);
     this.comInput.patchValue({
       ida_com: this.selectedNft.id_a,
-      // idu_com: localStorage.getItem('id_u')
-      idu_com: 1
+      idu_com: localStorage.getItem('id_u')
     })
     this.modal = true;
   }

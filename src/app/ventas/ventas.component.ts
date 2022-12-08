@@ -16,7 +16,7 @@ export class VentasComponent implements OnInit {
   constructor(private ds: DataService) {
     this.ds.get('venta', 'traerVentas').subscribe((data: any) => {
       if (data) {
-        this.ventas = data;
+        this.ventas = data.reverse();
         console.log(this.ventas);
         
       }

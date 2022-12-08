@@ -9,8 +9,8 @@
         <!-- Banner -->
         <article class="flex justify-center">
 
-          <div class="w-full relative rounded-xl bg-cover overflow-hidden" style="height: 242px; object-fit: cover;">
-            <img [src]="ofertas[index]" class="rounded-lg">
+          <div class="w-full relative bg-cover overflow-hidden" style="height: 363px; object-fit: cover;">
+            <img [src]="ofertas[index]">
           </div>
 
         </article>
@@ -67,7 +67,7 @@
 
               <article class="flex items-center mt-4">
                 <p class="text-morado-resaltar font-bold mr-2">{{PC.precio_a}} ETH</p>
-                <p class="text-xs text-blanco-fuente ml-2">{{PC.precio_a | currency: 'USD'}}</p>
+                <p class="text-xs text-blanco-fuente ml-2">{{PC.precio_a | eth | currency: 'USD'}}</p>
               </article>
 
             </div>
@@ -179,8 +179,6 @@
           <article class="overflow-scroll h-2/3">
 
             <div class="flex my-4" *ngFor="let com of comXCat">
-              <div style="background-image:url('../assets/perfil3.png')" class="w-12 h-12 bg-cover rounded-md mr-2">
-              </div>
 
               <div class="flex w-full">
                 <div>

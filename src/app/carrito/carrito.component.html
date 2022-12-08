@@ -13,19 +13,21 @@
         Carrito
       </div>
       <div class="text-sm">
-        <span style="color: #9E24EC">3</span> NFT's en tu carrito
+        <span style="color: #9E24EC">{{conteo}}</span> NFT's en tu carrito
       </div>
     </div>
     <div class="text-white text-center my-auto">
       <div class="font-bold text-2xl inline-block align-middle">
-        Saldo 346 ETH
+        {{saldo_u | currency}} ETH
       </div>
     </div>
   </div>
 
+<div *ngIf="conteo <= 0">
+  <p class="font-bold text-3xl d-block text-center"> <span style="color: #9E24EC"> No tienes NFTs en tu carrito. </span></p>
+</div>
 
-
-  <table class="table-auto ml-28 mr-28">
+  <table class="table-auto ml-28 mr-28" *ngIf="conteo > 0">
     <!-- Encabezado de la tabla -->
     <thead>
       <tr>
@@ -36,7 +38,7 @@
     </thead>
 
     <!-- Cuerpo de la tabla -->
-    <tbody>
+    <tbody *ngIf="conteo > 0">
 
       <tr *ngFor="let L of carrito">
         <!-- Imagen -->
@@ -58,11 +60,11 @@
 
   <hr class="ml-28 mr-28">
 
-  <div class="subtotal text-end mr-28">
+  <div class="subtotal text-end mr-28" *ngIf="conteo > 0">
     <div>
-      <p class="font-bold text-l subtotal3 ">Subtotal: <span style="color: #9E24EC"> {{subTotal}} ETH </span></p>
+      <p class="font-bold text-l subtotal3 ">Subtotal: <span style="color: #9E24EC"> {{subTotal | currency }} ETH </span></p>
       <p class="text-l subtotal3 ">Descuento: <span style="color: #9E24EC"> {{desc}}%</span></p>
-      <p class="font-bold text-3xl subtotal3 ">Total: <span style="color: #9E24EC"> {{total | number}} ETH </span></p>
+      <p class="font-bold text-3xl subtotal3 ">Total: <span style="color: #9E24EC"> {{total | currency}} ETH </span></p>
     </div>
     <button class="pagarbutt pagarbutt1" (click)="abrirModal()"> Pagar</button>
   </div>
@@ -79,11 +81,11 @@
   </div>
   <div class="text-center">
     <p>Saldo Actual: {{saldo_u | currency}}</p>
-    <p class="text-4xl font-bold"><span style="color: #9E24EC">{{total | number}}</span> ETH <i class="fas fa-caret-down pl-1" style="color: #9E24EC;"></i></p>
+    <p class="text-4xl font-bold"><span style="color: #9E24EC">{{total | currency}}</span> ETH <i class="fas fa-caret-down pl-1" style="color: #9E24EC;"></i></p>
   </div>
   <div class="text-center">
     <p>Nuevo Saldo:</p>
-    <p class="text-5xl font-bold">{{saldoFinal}} <span style="color: #9E24EC">ETH</span> <i class="fas fa-minus pl-2"></i></p>
+    <p class="text-5xl font-bold">{{saldoFinal | currency}} <span style="color: #9E24EC">ETH</span> <i class="fas fa-minus pl-2"></i></p>
   </div>
   <div class="pt-4">
     <button class="paybutton" (click)="pagar()">Pagar</button>

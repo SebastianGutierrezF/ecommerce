@@ -23,5 +23,9 @@ export class BuscadorComponent implements OnInit {
     this.saldo_u = "";
     this.router.navigate(['login']);
   }
+  
+  isAdmin() {
+    return localStorage.getItem('admin') == "1";
+  }
 
 }

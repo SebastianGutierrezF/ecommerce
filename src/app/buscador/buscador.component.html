@@ -24,7 +24,7 @@
         </article>
 
         <article class="w-36 flex justify-evenly">
-            <a routerLink="ventas">
+            <a *ngIf="isAdmin()" routerLink="ventas">
                 <i class="fa-solid fa-chart-line text-transparent text-2xl bg-clip-text bg-gradient-to-br from-rosa-resaltar to-morado-resaltar cursor-pointer"></i>
             </a>
             <!-- <i class="fa-sharp fa-solid fa-bell text-transparent text-2xl bg-clip-text bg-gradient-to-br from-rosa-resaltar to-morado-resaltar"></i> -->

@@ -29,6 +29,11 @@ formulario:  FormGroup = this.fb.group({
       if (data.id_u != 0) {
         localStorage.setItem('id_u', data.id_u);
         localStorage.setItem('saldo_u', data.saldo_u);
+        if (data.id_u == 1) {
+          localStorage.setItem('admin', "1");
+        } else {
+          localStorage.setItem('admin', "0");
+        }
         this.router.navigate(['dashboard']);
       } else {
         alert("Usuario o contraseña incorrectos")
