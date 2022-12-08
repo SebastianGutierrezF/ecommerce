@@ -12,17 +12,17 @@
 
         <div class="inputs">
             <div class="correo">
-                <input type="text" class="input" placeholder="      Correo" formControlName="usuario_u">
+                <input type="text" class="input" placeholder="Usuario o correo" formControlName="usuario_u">
                 <i class="fa-solid fa-envelope"></i>
                 <span class="form-text" *ngIf="campoEsValido('usuario_u')">
-                    Este campo es obligatorio
+                    Ingrese su usuario o correo
                 </span>
             </div>
             <div class="correo">
-                <input type="password" data-lpignore="true" placeholder="      Contraseña" formControlName="pass">
+                <input type="password" data-lpignore="true" placeholder="Contraseña" formControlName="pass">
                 <i class="fa-solid fa-key"></i>
                 <span class="form-text" *ngIf="campoEsValido('pass')">
-                    Este campo es obligatorio
+                    Ingrese su contraseña
                 </span>
             </div>
             <div class="botones">
