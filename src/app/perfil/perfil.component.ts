@@ -23,10 +23,9 @@ export class PerfilComponent implements OnInit {
   });
   infoVentas: any;
 
-  constructor(private fb: FormBuilder, private ds: DataService, private router: Router, private location: Location) {
+  constructor(private fb: FormBuilder, private ds: DataService, private location: Location) {
     this.traerUsuario();
     this.traerVentas();
-    console.log()
   }
 
   ngOnInit(): void {
@@ -35,17 +34,17 @@ export class PerfilComponent implements OnInit {
       saldo_u: ''
     });
   }
+
   traerUsuario() {
     this.ds.post('usuario', 'traerUsuarioxid', { id_u: localStorage.getItem('id_u') }).subscribe((data: any) => {
       if (data) {
         this.info = data;
-        console.log(this.info)
       } else {
-        alert('No pudimos obtener las categorías.');
+        alert('No pudimos obtener el usuario.');
       }
     })
-
   }
+
   traerVentas() {
     this.ds.post('venta', 'traerVentasUsuario', { idu_a: localStorage.getItem('id_u') }).subscribe((data: any) => {
       if (data) {
@@ -57,11 +56,14 @@ export class PerfilComponent implements OnInit {
     })
 
   }
+  
   agregarSaldo() {
     this.ds.post('usuario', 'agregarSaldo', this.Formulario.value).subscribe((dato: any) => {
-      console.log(dato);
-      if (dato['estatus']) {
-        this.router.navigate(['perfil']);
+      if (dato) {
+        alert("Saldo agregado");
+        this.traerUsuario();
+        this.toggleModal();
+        location.reload();
       }
     });
   }
