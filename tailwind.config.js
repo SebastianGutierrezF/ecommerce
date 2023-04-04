@@ -5,12 +5,12 @@ module.exports = {
     extend: {
       colors:{
         'morado-fondo': '#17152A',
-        'morado-contenedor': '#1F1D35',
-        'gris-contenedor': '#39325C',
-        'gris-fuente': '#666577',
-        'blanco-fuente': '#DBDCE1',
-        'rosa-resaltar': '#B249F2',
-        'morado-resaltar': '#9238F1',
+        'morado-contenedor': '#1E2236',
+        'gris-contenedor': '#323D5C',
+        'gris-fuente': '#656D77',
+        'blanco-fuente': '#ffffff',
+        'rosa-resaltar': '#2596be',
+        'morado-resaltar': '#bfdbff',
       },
     },
   },
