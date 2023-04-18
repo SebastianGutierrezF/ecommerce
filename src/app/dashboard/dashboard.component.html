@@ -9,7 +9,7 @@
         <!-- Banner -->
         <article class="flex justify-center">
 
-          <div class="w-full relative bg-cover overflow-hidden">
+          <div class="w-full relative overflow-hidden">
             <img [src]="ofertas[index]" class="fade-in">
           </div>
 
@@ -279,7 +279,7 @@
       <article class="infoModal">
         <div>
           <h1 class="font-bold text-xl">{{selectedNft?.nombre_a}}</h1>
-          <h1> <span style="color: #2596be;">ETH</span> {{selectedNft?.precio_a}}</h1>
+          <h1> <span style="color: #2596be;"></span> {{selectedNft?.precio_a | currency: 'MXN'}}</h1>
           <button class="botonmodal" (click)="agregarAlCarrito(selectedNft!)">
             <i class="fas fa-cart-plus mt-2">
             </i></button>

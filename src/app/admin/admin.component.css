@@ -22,7 +22,7 @@ label {
 .uploaders {
     width: 100%;
     height: 100%;
-    background: #1f1d46;
+    background: #b6b6b6;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -66,31 +66,31 @@ textarea {
 }
 
 .uploader button {
-    background: #B249F2;
-    border: solid 1px #B249F2;
+    background: #196480;
+    border: solid 1px #2596be;
     border-radius: 10px;
     color: #DBDCE1;
 }
 
 .uploader button:disabled {
-    background: #b149f269;
+    background: #196480;
     filter: blur(0.5px);
 }
 
 .uploader button:disabled:hover {
-    background: #b149f269;
+    background: #196480;
     filter: blur(0.5px);
 }
 
 .uploader button:hover {
-    background: transparent;
+    background: #044157;
     transition: 250ms;
 }
 
 .dropZone {
-    background: #39325C;
+    background: #196480;
     border-radius: 15px;
-    border: 3px #B249F2 dotted;
+    border: 2px #8cd5f0 dotted;
     color: whitesmoke;
     text-align: center;
     height: 100px;
@@ -101,7 +101,7 @@ textarea {
 }
 
 .dropZone:hover {
-    background: rgba(57, 50, 92, 0.7);
+    background: #044157;
 }
 
 .fileInput {

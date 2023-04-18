@@ -49,13 +49,13 @@
                         {{venta.fecha_v | date: 'MMM/d/yy' }}
                     </div>
                     <div class="flex items-center justify-center">
-                        {{venta.monto_v}} ETH
+                        {{venta.monto_v | currency: 'MXN'}}
                     </div>
                     <div [ngClass]="{'text-green-700': venta.desc_v > 0}">
                         {{venta.desc_v}}%
                     </div>
                     <div class="flex items-center justify-center">
-                        {{venta.mFinal_v}} ETH
+                        {{venta.mFinal_v | currency: 'MXN'}}
                     </div>
                     <div class="flex items-center justify-center">
                         {{venta.usuario_u}}
@@ -69,7 +69,7 @@
                         {{articulo.nombre_a}}
                     </div>
                     <div>
-                        {{articulo.precio_a}} ETH
+                        {{articulo.precio_a | currency: 'MXN'}}
                     </div>
                 </div>
             </div>

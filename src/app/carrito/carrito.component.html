@@ -47,7 +47,7 @@
           <h5 class="text-start pt-16 font-bold text-xl">{{L.nombre_a}}</h5>
         </td>
         <!-- Precio -->
-        <td class="tamano text-center text-xl font-bold">{{L.precio_a}} ETH</td>
+        <td class="tamano text-center text-xl font-bold">{{L.precio_a | currency: 'MXN'}}</td>
         <!-- Boton de accion -->
         <td class="tamano text-center">
           <button class="button button1" (click)="borrarNFT(L.id_a)">
@@ -62,9 +62,9 @@
 
   <div class="subtotal text-end mr-28" *ngIf="conteo > 0">
     <div>
-      <p class="font-bold text-l subtotal3 ">Subtotal: <span style="color: #2596be"> {{subTotal | currency }} ETH </span></p>
+      <p class="font-bold text-l subtotal3 ">Subtotal: <span style="color: #2596be"> {{subTotal | currency: 'MXN' }} </span></p>
       <p class="text-l subtotal3 ">Descuento: <span style="color: #2596be"> {{desc}}%</span></p>
-      <p class="font-bold text-3xl subtotal3 ">Total: <span style="color: #2596be"> {{total | currency}} ETH </span></p>
+      <p class="font-bold text-3xl subtotal3 ">Total: <span style="color: #2596be"> {{total | currency: 'MXN'}} </span></p>
     </div>
     <button class="pagarbutt pagarbutt1" (click)="abrirModal()"> Pagar</button>
   </div>
@@ -81,11 +81,11 @@
   </div>
   <div class="text-center">
     <p>Saldo Actual: {{saldo_u | currency}}</p>
-    <p class="text-4xl font-bold"><span style="color: #2596be">{{total | currency}}</span> ETH <i class="fas fa-caret-down pl-1" style="color: #2596be;"></i></p>
+    <p class="text-4xl font-bold"><span style="color: #2596be">{{total | currency: 'MXN'}}</span> <i class="fas fa-caret-down pl-1" style="color: #2596be;"></i></p>
   </div>
   <div class="text-center">
     <p>Nuevo Saldo:</p>
-    <p class="text-5xl font-bold">{{saldoFinal | currency}} <span style="color: #2596be">ETH</span> <i class="fas fa-minus pl-2"></i></p>
+    <p class="text-5xl font-bold">{{saldoFinal | currency: 'MXN'}} <span style="color: #2596be"></span> <i class="fas fa-minus pl-2"></i></p>
   </div>
   <div class="pt-4">
     <button class="paybutton" (click)="pagar()">Pagar</button>

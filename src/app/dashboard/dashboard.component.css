@@ -26,7 +26,7 @@
   animation: spin 6s linear infinite;
   height: 343px;
   object-fit: contain;
-  object-position: center;
+  margin: auto;
 }
 
 
@@ -78,7 +78,7 @@
   border: #2596be 1px solid;
   border-radius: 10px;
   transition-duration: 0.2s;
-  color: #2596be;;
+  color: #2596be;
 }
 
 .botonmodal:hover {
