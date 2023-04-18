@@ -8,11 +8,11 @@
 }
 
 .fa-chevron-left {
-  color: #9E24EC;
+  color: #2596be;
 }
 
 hr {
-  border-top: 1.5px solid #9E24EC;
+  border-top: 1.5px solid #2596be;
 }
 
 .kjnnk {
@@ -36,7 +36,7 @@ img {
 }
 
 .button {
-  background-color: #9E24EC; /* Green */
+  background-color: #2596be; /* Green */
   border: none;
   color: white;
   padding: 3px 36px;
@@ -51,14 +51,14 @@ img {
 }
 
 .button1 {
-  background-color: #9E24EC;
+  background-color: #2596be;
   color: white;
-  border: 2px solid #9E24EC;
+  border: 2px solid #2596be;
 }
 
 .button1:hover {
   background-color: white;
-  color: #9E24EC;
+  color: #2596be;
 }
 
 ::ng-deep .mat-table {
@@ -70,7 +70,7 @@ td, th{
   color: white;
 }
 tr{
-  border-top: 1px solid #9E24EC;
+  border-top: 1px solid #2596be;
 
 }
 
@@ -101,11 +101,11 @@ tr{
 .pagarbutt1 {
   background-color: #171529;
   color: white;
-  border: 2px solid #9E24EC;
+  border: 2px solid #2596be;
 }
 
 .pagarbutt1:hover {
-  background-color: #9E24EC;
+  background-color: #2596be;
   color: white;
 }
 
@@ -134,13 +134,13 @@ tr{
 .paybutton {
   width: 155px;
   height: 40px;
-  border: #9E24EC 1px solid;
+  border: #2596be 1px solid;
   border-radius: 15px;
   transition-duration: 0.4s;
 }
 
 .paybutton:hover {
-  background-color: #9E24EC;
+  background-color: #2596be;
   color: white;
 }
 

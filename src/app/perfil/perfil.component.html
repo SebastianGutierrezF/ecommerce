@@ -1,7 +1,7 @@
 <div class="todo" *ngFor="let p of info">
   <br>
   <div class="text-white my-auto mouse cursor-pointer" (click)="BackBut()">
-    <i class="fas fa-chevron-left text-5xl inline-block align-middle mr-3" style="color: #9E24EC;"></i>
+    <i class="fas fa-chevron-left text-5xl inline-block align-middle mr-3" style="color: #2596be;"></i>
     <span class="inline-block">Continuar Comprando</span>
   </div>
   <p class="text-white font-bold m-4 text-3xl">Perfil</p>
@@ -25,7 +25,7 @@
           <div class="grid justify-center">
             <div class="flex mt-3 flex-row align-center">
               <p class="grid text-white font-bold m-4 text-2xl">Usuario</p>
-              <p class="text-purple-800 font-bold m-4 text-2xl">{{p.usuario_u}} </p>
+              <p class="text-sky-500 font-bold m-4 text-2xl">{{p.usuario_u}} </p>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="columna h-24 w-96  m-2 rounded-xl  bg-gris-contenedor">
           <div class="grid justify-center">
             <div class="flex mt-3 flex-row align-center">
-              <p class="grid text-white font-bold m-4 text-2xl">Zapatos </p>
+              <p class="grid text-white font-bold m-4 text-2xl">SharkyShoes </p>
               <p class="text-purple-800 font-bold m-4 text-2xl">{{conteo}} </p>
             </div>
           </div>
@@ -55,7 +55,7 @@
           </div>
           <br>
           <br>
-          <button class="rounded-xl text-white font-semibold w-2/4 py-2 px-4 border-2 border-purple-800"
+          <button class="rounded-xl text-white font-semibold w-2/4 py-2 px-4 border-2 border-sky-500"
             [formGroup]="Formulario" (click)="toggleModal()">
             Agregar Saldo
           </button>
@@ -109,11 +109,11 @@
 
           <!--footer-->
           <div class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-            <button class="rounded-xl text-white font-semibold py-2 px-4 border-2 border-purple-800" type="button"
+            <button class="rounded-xl text-white font-semibold py-2 px-4 border-2 border-sky-500" type="button"
               (click)="toggleModal()">
               Cerrar
             </button>
-            <button class=" rounded-xl text-white font-semibold py-2 px-4 border-2 border-purple-800"
+            <button class=" rounded-xl text-white font-semibold py-2 px-4 border-2 border-sky-500"
               [formGroup]="Formulario" (click)="agregarSaldo()">
               Agregar Saldo
             </button>

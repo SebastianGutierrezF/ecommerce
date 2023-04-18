@@ -1,5 +1,5 @@
 .modal {
-  border: #9E24EC 2px solid;
+  border: #2596be 2px solid;
     position: fixed;
     width: 550px;
     top: 50%;
@@ -75,14 +75,14 @@
 .botonmodal {
   width: 129px;
   height: 30px;
-  border: #9E24EC 1px solid;
+  border: #2596be 1px solid;
   border-radius: 10px;
   transition-duration: 0.2s;
-  color: #9E24EC;;
+  color: #2596be;;
 }
 
 .botonmodal:hover {
-  background-color: #9E24EC;
+  background-color: #2596be;
   color: white;
   /* fill: white; */
 }
@@ -90,12 +90,12 @@
 
 .inputcoment {
   background-color: #171529;
-  border: 1px solid #9E24EC;
+  border: 1px solid #2596be;
   border-radius: 8px;
 }
 
 input::placeholder {
-  color: #9E24EC;
+  color: #2596be;
 }
 
 .arrows {

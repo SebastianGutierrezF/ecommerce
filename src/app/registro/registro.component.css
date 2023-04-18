@@ -30,8 +30,8 @@ input {
 }
 
 .C {
-    background-color: #B249F2;
-    border: #B249F2;
+    background-color: #2596be;
+    border: #2596be;
     border-radius: 5px;
     padding: 6px;
     color: white;
@@ -43,10 +43,10 @@ input {
 .C:hover{
     color:black;
     background-color:white;
+    cursor: pointer;
 }
 
 .contenedor {
-    margin-top: 35px;
     margin-left: 100px;
     background-color: #17152a;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -82,11 +82,10 @@ button {
 }
 
 img {
-    width: 600px;
-    margin: -70px;
-    margin-left: -120px;
-    margin-bottom: -110px;
-    margin-top: -125px;
+    width: 300px;
+    height: 210px;
+    margin-left: -10px;
+    margin-bottom: 10px;
 }
 
 .botones {
@@ -113,5 +112,5 @@ span{
 }
 
 .volver:hover{
-    color:#B249F2;
+    color:#2596be;
 }

@@ -37,12 +37,12 @@ input {
 }
 
 .R:hover {
-    color: #B249F2;
+    color: #2596be;
 }
 
 .C {
-    background-color: #B249F2;
-    border: #B249F2;
+    background-color: #2596be;
+    border: #2596be;
     border-radius: 5px;
     padding: 6px;
     color: white;
@@ -52,7 +52,7 @@ input {
 }
 
 .contenedor {
-    margin-top: 160px;
+    margin-top: 10px;
     margin-left: 80px;
     background-color: #17152a;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -83,16 +83,16 @@ button {
 }
 
 .p2 {
+    /* margin-top: 100px; */
     font-size: 23px;
     font-weight: 100;
 }
 
 img {
-    width: 600px;
-    margin: -70px;
-    margin-left: -120px;
-    margin-bottom: -110px;
-    margin-top: -125px;
+    width: 300px;
+    height: 210px;
+    margin-left: -10px;
+    margin-bottom: 10px;
 }
 
 .botones {

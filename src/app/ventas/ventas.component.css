@@ -34,11 +34,11 @@
     border-left-width: 2px;
     border-right-width: 2px;
     /*.border-l-2*/
-    border-color: #9238F1;
+    border-color: #2596be;
     /*.border-indigo*/
     background-color: transparent;
     /*.bg-gray-100 */
-    color: #9238F1;
+    color: #2596be;
     /*.text-indigo*/
 }
 
@@ -79,14 +79,14 @@
     /*.border*/
     border-radius: 9999px;
     /*.rounded-full */
-    border-color: #9238F1;
+    border-color: #2596be;
     /*.border-grey*/
 }
 
 /* Icon formatting - open */
 .tab input[type=checkbox]:checked+label::after {
     transform: rotate(315deg);
-    background-color: #9238F1;
+    background-color: #2596be;
     /*.bg-indigo*/
     color: transparent;
     /*.text-grey-lightest*/
