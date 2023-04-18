@@ -13,18 +13,18 @@
         Carrito
       </div>
       <div class="text-sm">
-        <span style="color: #9E24EC">{{conteo}}</span> NFT's en tu carrito
+        <span style="color: #9E24EC">{{conteo}}</span> Zapatos en tu carrito
       </div>
     </div>
     <div class="text-white text-center my-auto">
       <div class="font-bold text-2xl inline-block align-middle">
-        {{saldo_u | currency}} ETH
+        {{saldo_u | currency}} Saldo
       </div>
     </div>
   </div>
 
 <div *ngIf="conteo <= 0">
-  <p class="font-bold text-3xl d-block text-center"> <span style="color: #9E24EC"> No tienes NFTs en tu carrito. </span></p>
+  <p class="font-bold text-3xl d-block text-center"> <span style="color: #9E24EC"> No tienes productos en tu carrito. </span></p>
 </div>
 
   <table class="table-auto ml-28 mr-28" *ngIf="conteo > 0">

@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit {
       if (data) {
         let desc: number = 0;
         const hoy = new Date(Date.now());
-        this.ofertas.push("../../assets/banner default.png");
+        // this.ofertas.push("../../assets/banner default.png");
         data.forEach((oferta: any) => {
           if (new Date(oferta.fechain_o) <= hoy && new Date(oferta.fechafin_o) >= hoy) {
             desc += Number.parseInt(oferta.desc_o);

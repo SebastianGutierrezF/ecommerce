@@ -66,8 +66,8 @@
               <p class="text-blanco-fuente font-semibold tracking-wide mt-3 mb-6">{{PC.nombre_a}}</p>
 
               <article class="flex items-center mt-4">
-                <p class="text-morado-resaltar font-bold mr-2">{{PC.precio_a}} ETH</p>
-                <p class="text-xs text-blanco-fuente ml-2">{{PC.precio_a | eth | currency: 'USD'}}</p>
+                <p class="text-morado-resaltar font-bold mr-2">{{PC.precio_a | currency: 'USD'}} </p>
+                <p class="text-xs text-blanco-fuente ml-2">{{PC.precio_a | currency: 'MXN'}}</p>
               </article>
 
             </div>
@@ -141,7 +141,7 @@
               <div style="background-image:url({{P.img_a}})" class="w-12 h-12 rounded-md bg-cover mr-2"></div>
               <div class="ml-3">
                 <p class="text-blanco-fuente font-semibold traking-wide">{{P.nombre_a}}</p>
-                <p class="text-gris-fuente text-xs font-bold">{{P.precio_a}} ETH</p>
+                <p class="text-gris-fuente text-xs font-bold">{{P.precio_a | currency: 'MXN'}}</p>
               </div>
             </div>
 
